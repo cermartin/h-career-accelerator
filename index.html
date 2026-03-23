@@ -368,6 +368,113 @@
     .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
     .cta-note { margin-top: 1.5rem; font-size: 0.82rem; color: var(--muted); }
 
+    /* ── About ── */
+    .about-section { background: #fff; }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+    .about-photo-col { position: sticky; top: 5rem; }
+    .about-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: 0 16px 48px rgba(87,94,207,0.15);
+    }
+    .about-logo {
+      margin-top: 1.25rem;
+      max-width: 180px;
+    }
+    .about-social {
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .about-social a { color: var(--primary); font-weight: 600; }
+    .about-content h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+    }
+    .about-content p { color: var(--muted); margin-bottom: 1rem; font-size: 1rem; line-height: 1.75; }
+    .about-creds {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 600px) { .about-creds { grid-template-columns: 1fr; } }
+    .cred-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 1.1rem 1.25rem;
+    }
+    .cred-card .cred-icon { font-size: 1.4rem; margin-bottom: 0.4rem; }
+    .cred-card .cred-title { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.15rem; }
+    .cred-card .cred-sub   { font-size: 0.8rem; color: var(--muted); }
+    .about-gallery {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+    @media (max-width: 600px) { .about-gallery { grid-template-columns: repeat(2, 1fr); } }
+    .about-gallery img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: var(--radius-sm);
+    }
+    .about-gallery-caption {
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 0.3rem;
+    }
+
+    /* ── Bio Strip (below hero) ── */
+    .bio-strip {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 0;
+    }
+    .bio-strip-inner {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .bio-strip-avatar {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 2px solid var(--border);
+    }
+    .bio-strip-text { flex: 1; min-width: 200px; }
+    .bio-strip-text strong { font-size: 0.95rem; font-weight: 700; }
+    .bio-strip-text span   { font-size: 0.82rem; color: var(--muted); display: block; margin-top: 0.1rem; }
+    .bio-strip-pills { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .pill {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
     /* ── Footer ── */
     footer {
       background: #1a1a1a;
@@ -387,6 +494,7 @@
     <div class="container nav-inner">
       <div class="nav-logo"><span class="gradient-text">H!</span> Career Accelerator</div>
       <div class="nav-links">
+        <a href="#about">About</a>
         <a href="#tracks">Tracks</a>
         <a href="#journey">Programme</a>
         <a href="#seven">7 Seconds</a>
@@ -412,6 +520,25 @@
       </div>
     </div>
   </section>
+
+  <!-- BIO STRIP -->
+  <div class="bio-strip">
+    <div class="container">
+      <div class="bio-strip-inner">
+        <img src="darshika-headshot.jpg" alt="Darshika Patel" class="bio-strip-avatar" />
+        <div class="bio-strip-text">
+          <strong>Darshika Patel — Founder, DrShika Academy</strong>
+          <span>Career coach, speaker &amp; networker helping people connect with confidence and open doors to opportunity.</span>
+        </div>
+        <div class="bio-strip-pills">
+          <span class="pill">🏆 Leader of the Year 2025 Nominee</span>
+          <span class="pill">🎓 Oxford Executive Leadership</span>
+          <span class="pill">🌐 35+ Countries</span>
+          <span class="pill">📱 @drshikacademy</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- WHAT IS H! -->
   <section class="hi-section" id="hi">
@@ -620,6 +747,89 @@
         <div class="testimonial-card placeholder">
           <div class="icon">✨</div>
           <p><strong>Key moment of value</strong><br/>Coming soon — participant story</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT DARSHIKA -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- Photo column -->
+        <div class="about-photo-col">
+          <img src="darshika-headshot.jpg" alt="Darshika Patel" class="about-photo" />
+          <img src="drshika-logo.png" alt="DrShika Academy" class="about-logo" />
+          <div class="about-social">
+            <span>TikTok:</span>
+            <a href="https://www.tiktok.com/@drshikacademy" target="_blank" rel="noopener">@drshikacademy</a>
+          </div>
+        </div>
+
+        <!-- Content column -->
+        <div class="about-content">
+          <div class="section-label">About</div>
+          <h2>Meet <span class="gradient-text">Darshika Patel</span></h2>
+
+          <p>Darshika Patel is a career coach, speaker, and the founder of DrShika Academy — a platform built on the belief that every person has the power to shine their light and connect with confidence. Her work centres on transforming how people show up in conversations, interviews, and the spaces where opportunity is made.</p>
+
+          <p>With a career spanning over 35 countries, Darshika has built and led programmes, communities, and initiatives that sit at the intersection of human connection and professional growth. She is a graduate of the <strong>Oxford Executive Leadership Programme</strong> and has shared stages and rooms with some of the world's most influential leaders.</p>
+
+          <p>As a nominee for <strong>Leader of the Year 2025</strong>, and with deep roots in education through partnerships with institutions like <strong>Brunel Business School</strong> and <strong>Northwood College</strong>, Darshika brings both credibility and warmth to everything she delivers.</p>
+
+          <p>The H! Career Accelerator is a direct expression of her life's work — helping people move from doubt to direction, preparation to confidence, and conversation to real opportunity.</p>
+
+          <!-- Credential cards -->
+          <div class="about-creds">
+            <div class="cred-card">
+              <div class="cred-icon">🎓</div>
+              <div class="cred-title">Oxford Executive Leadership</div>
+              <div class="cred-sub">Executive development programme graduate</div>
+            </div>
+            <div class="cred-card">
+              <div class="cred-icon">🏆</div>
+              <div class="cred-title">Leader of the Year 2025</div>
+              <div class="cred-sub">Highly Commended nominee</div>
+            </div>
+            <div class="cred-card">
+              <div class="cred-icon">🌍</div>
+              <div class="cred-title">Global Experience</div>
+              <div class="cred-sub">Worked and coached across 35+ countries</div>
+            </div>
+            <div class="cred-card">
+              <div class="cred-icon">🏫</div>
+              <div class="cred-title">School &amp; University Partnerships</div>
+              <div class="cred-sub">Brunel Business School, Northwood College &amp; more</div>
+            </div>
+            <div class="cred-card">
+              <div class="cred-icon">🔵</div>
+              <div class="cred-title">Google UK/Ireland</div>
+              <div class="cred-sub">Engaged with senior Google leadership</div>
+            </div>
+            <div class="cred-card">
+              <div class="cred-icon">🚀</div>
+              <div class="cred-title">DrShika Academy</div>
+              <div class="cred-sub">Founder — built and led from the ground up</div>
+            </div>
+          </div>
+
+          <!-- Photo gallery -->
+          <div class="about-gallery">
+            <div>
+              <img src="darshika-google.jpg" alt="Darshika at Google event" />
+              <div class="about-gallery-caption">With Google UK/Ireland leadership</div>
+            </div>
+            <div>
+              <img src="darshika-leader-award.jpg" alt="Leader of the Year nomination" />
+              <div class="about-gallery-caption">Leader of the Year 2025 — Highly Commended</div>
+            </div>
+            <div>
+              <img src="darshika-teaching.jpg" alt="Darshika delivering a masterclass" />
+              <div class="about-gallery-caption">Delivering the H! Masterclass</div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
