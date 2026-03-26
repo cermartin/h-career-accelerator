@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The H! Career Accelerator — Register Flyer | DrShika Academy</title>
+  <style>
+    @page { size: A4; margin: 12mm; }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #fff;
+      color: #1a1a1a;
+      line-height: 1.5;
+    }
+
+    @media screen {
+      body { background: #d4d2ce; padding: 2rem; }
+      .page {
+        background: #fff;
+        max-width: 210mm;
+        min-height: 297mm;
+        margin: 0 auto;
+        padding: 0;
+        box-shadow: 0 8px 48px rgba(0,0,0,0.22);
+        overflow: hidden;
+        border-radius: 4px;
+      }
+    }
+    @media print {
+      body { background: #fff; padding: 0; }
+      .page { border-radius: 0; }
+    }
+
+    :root {
+      --primary: #575ECF;
+      --primary-dark: #3f45a8;
+      --accent: #FE7B02;
+      --teal: #2BBFBF;
+      --magenta: #F858BC;
+      --muted: #6b6b6b;
+      --border: #e5e3de;
+    }
+
+    /* ── Hero header band ── */
+    .flyer-header {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 45%, var(--teal) 100%);
+      padding: 9mm 12mm 8mm;
+      position: relative;
+      overflow: hidden;
+    }
+    .flyer-header::before {
+      content: "";
+      position: absolute;
+      width: 220px; height: 220px;
+      background: radial-gradient(circle, rgba(248,88,188,0.3) 0%, transparent 70%);
+      top: -80px; right: -40px;
+      border-radius: 50%;
+    }
+    .flyer-header::after {
+      content: "";
+      position: absolute;
+      width: 160px; height: 160px;
+      background: radial-gradient(circle, rgba(254,123,2,0.25) 0%, transparent 70%);
+      bottom: -60px; left: 20px;
+      border-radius: 50%;
+    }
+    .flyer-header-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8mm;
+    }
+    .flyer-header-text { flex: 1; }
+    .flyer-logo-wrap { flex-shrink: 0; }
+    .flyer-logo {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      opacity: 0.92;
+    }
+
+    .flyer-eyebrow {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 3mm;
+    }
+    .flyer-hi {
+      font-size: 4.2rem;
+      font-weight: 900;
+      line-height: 0.9;
+      color: #fff;
+      letter-spacing: -0.04em;
+    }
+    .flyer-hi span {
+      color: var(--accent);
+    }
+    .flyer-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.02em;
+      margin-top: 1.5mm;
+      line-height: 1.2;
+    }
+    .flyer-tagline {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 1.5mm 4mm;
+      border-radius: 9999px;
+      margin-top: 3mm;
+      letter-spacing: 0.03em;
+    }
+
+    /* ── Body content ── */
+    .flyer-body { padding: 7mm 12mm 6mm; }
+
+    /* ── Intro line ── */
+    .flyer-intro {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 6mm;
+      border-left: 4px solid var(--teal);
+      padding-left: 4mm;
+    }
+
+    /* ── Section label ── */
+    .flyer-section-label {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2.5mm;
+    }
+
+    /* ── What You'll Learn ── */
+    .learn-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4mm;
+      margin-bottom: 6mm;
+    }
+    .learn-card {
+      border-radius: 8px;
+      padding: 4mm 4mm 4.5mm;
+      border-top: 4px solid transparent;
+    }
+    .learn-card:nth-child(1) { background: #f0f1ff; border-top-color: var(--primary); }
+    .learn-card:nth-child(2) { background: #fff4eb; border-top-color: var(--accent); }
+    .learn-card:nth-child(3) { background: #e8fffe; border-top-color: var(--teal); }
+    .learn-card .learn-icon { font-size: 1.3rem; margin-bottom: 2mm; }
+    .learn-card h4 { font-size: 0.82rem; font-weight: 800; margin-bottom: 1.5mm; color: #1a1a1a; }
+    .learn-card p  { font-size: 0.73rem; color: var(--muted); line-height: 1.45; }
+
+    /* ── FTH Framework ── */
+    .fth-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4mm;
+      margin-bottom: 6mm;
+    }
+    .fth-box {
+      border-radius: 8px;
+      padding: 4.5mm 4mm;
+      text-align: center;
+      color: #fff;
+    }
+    .fth-box:nth-child(1) { background: var(--primary); }
+    .fth-box:nth-child(2) { background: var(--teal); }
+    .fth-box:nth-child(3) { background: var(--magenta); }
+    .fth-box .fth-letter { font-size: 2.2rem; font-weight: 900; opacity: 0.25; line-height: 1; }
+    .fth-box .fth-word   { font-size: 1rem; font-weight: 900; margin-top: 1mm; letter-spacing: 0.04em; }
+    .fth-box .fth-desc   { font-size: 0.7rem; opacity: 0.85; margin-top: 1.5mm; line-height: 1.4; }
+
+    /* ── Programme includes ── */
+    .includes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5mm 6mm;
+      margin-bottom: 6mm;
+    }
+    .includes-grid li {
+      list-style: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 2.5mm;
+      color: #1a1a1a;
+    }
+    .includes-grid li .check-dot {
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: var(--teal);
+      color: #fff;
+      font-size: 0.6rem;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ── Divider ── */
+    .divider { border: none; border-top: 1px solid var(--border); margin: 5mm 0; }
+
+    /* ── About strip ── */
+    .about-strip {
+      background: linear-gradient(135deg, #f0f1ff, #e8fffe);
+      border-radius: 10px;
+      padding: 4mm 5mm;
+      display: flex;
+      align-items: center;
+      gap: 4mm;
+      margin-bottom: 5mm;
+      border: 1px solid rgba(87,94,207,0.15);
+    }
+    .about-strip img {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 3px solid var(--primary);
+    }
+    .about-strip-text { flex: 1; }
+    .about-strip-text strong { font-size: 0.88rem; font-weight: 800; display: block; color: #1a1a1a; }
+    .about-strip-text .about-role { font-size: 0.72rem; color: var(--muted); margin-top: 0.5mm; }
+    .creds-pills { display: flex; gap: 2mm; flex-wrap: wrap; margin-top: 2mm; }
+    .cred-pill {
+      font-size: 0.62rem;
+      font-weight: 700;
+      padding: 1mm 3mm;
+      border-radius: 9999px;
+      background: rgba(87,94,207,0.1);
+      color: var(--primary);
+      white-space: nowrap;
+    }
+
+    /* ── Footer band ── */
+    .flyer-footer {
+      background: #1a1a1a;
+      padding: 4mm 12mm;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4mm;
+    }
+    .contact-block .contact-label {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 1.5mm;
+    }
+    .contact-block a {
+      font-size: 0.82rem;
+      color: var(--teal);
+      font-weight: 700;
+      display: block;
+      text-decoration: none;
+    }
+    .contact-block .contact-social {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.55);
+      margin-top: 0.8mm;
+    }
+    .copyright { font-size: 0.58rem; color: rgba(255,255,255,0.3); align-self: flex-end; }
+    .qr-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5mm;
+      flex-shrink: 0;
+    }
+    .qr-block img {
+      width: 60px; height: 60px;
+      border-radius: 6px;
+      background: #fff;
+      padding: 2px;
+      display: block;
+    }
+    .qr-block .qr-text {
+      font-size: 0.5rem;
+      color: rgba(255,255,255,0.5);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- HEADER BAND -->
+    <div class="flyer-header">
+      <div class="flyer-header-inner">
+        <div class="flyer-header-text">
+          <div class="flyer-eyebrow">DrShika Academy · Career Programme</div>
+          <div class="flyer-hi">H<span>!</span></div>
+          <div class="flyer-title">Career Accelerator</div>
+          <div class="flyer-tagline">From Conversation to Opportunity</div>
+        </div>
+        <div class="flyer-logo-wrap">
+          <img src="Copy of drshika-logo_07.png" alt="DrShika Academy" class="flyer-logo" />
+        </div>
+      </div>
+    </div>
+
+    <!-- BODY -->
+    <div class="flyer-body">
+
+      <!-- DEADLINE BANNER -->
+      <div style="background: var(--accent); color: #fff; border-radius: 8px; padding: 3mm 5mm; display: flex; align-items: center; justify-content: space-between; margin-bottom: 5mm;">
+        <span style="font-size: 0.78rem; font-weight: 700;">📅 &nbsp;Sign up deadline: <strong>3rd April 2026</strong></span>
+        <a href="https://forms.gle/t78Hcm8BDseTb7Wv9" style="font-size: 0.7rem; color: #fff; font-weight: 700; background: rgba(0,0,0,0.2); padding: 1.5mm 3.5mm; border-radius: 9999px; text-decoration: none;">Register Now →</a>
+      </div>
+
+      <!-- INTRO -->
+      <p class="flyer-intro">
+        A structured programme that teaches you how to show up with confidence, make a lasting impression, and turn every conversation into a real opportunity.
+      </p>
+
+      <!-- WHAT YOU'LL LEARN -->
+      <div class="flyer-section-label">What You'll Learn</div>
+      <div class="learn-grid">
+        <div class="learn-card">
+          <div class="learn-icon">🎯</div>
+          <h4>Identity &amp; Clarity</h4>
+          <p>Know what you stand for and learn to say it with confidence.</p>
+        </div>
+        <div class="learn-card">
+          <div class="learn-icon">⚡</div>
+          <h4>Confidence &amp; Presence</h4>
+          <p>Show up fully in every room and stay steady under pressure.</p>
+        </div>
+        <div class="learn-card">
+          <div class="learn-icon">🌐</div>
+          <h4>Connection &amp; Follow-Up</h4>
+          <p>Turn first conversations into lasting opportunities.</p>
+        </div>
+      </div>
+
+      <!-- 7-SECOND FRAMEWORK -->
+      <div class="flyer-section-label">The 7-Second Impression Framework</div>
+      <div class="fth-row">
+        <div class="fth-box">
+          <div class="fth-letter">F</div>
+          <div class="fth-word">FEEL</div>
+          <div class="fth-desc">What emotion do you create the moment you speak?</div>
+        </div>
+        <div class="fth-box">
+          <div class="fth-letter">T</div>
+          <div class="fth-word">THINK</div>
+          <div class="fth-desc">What do people conclude about you from your first words?</div>
+        </div>
+        <div class="fth-box">
+          <div class="fth-letter">H</div>
+          <div class="fth-word">HOOK</div>
+          <div class="fth-desc">What makes them lean in and want to know more?</div>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- PROGRAMME INCLUDES -->
+      <div class="flyer-section-label">Programme Includes</div>
+      <ul class="includes-grid">
+        <li><span class="check-dot">✓</span> 1-to-1 Coaching Session</li>
+        <li><span class="check-dot">✓</span> High-Pressure Simulations</li>
+        <li><span class="check-dot">✓</span> Live Group Sessions (Zoom)</li>
+        <li><span class="check-dot">✓</span> Reconnection &amp; Follow-Up Strategy</li>
+        <li><span class="check-dot">✓</span> 6-Week Structured Career Sprint</li>
+        <li><span class="check-dot">✓</span> Personal Growth Plan</li>
+      </ul>
+
+      <hr class="divider" />
+
+      <!-- ABOUT -->
+      <div class="about-strip">
+        <img src="darshika-headshot.jpg" alt="Darshika Patel" />
+        <div class="about-strip-text">
+          <strong>Darshika Patel — Founder, DrShika Academy</strong>
+          <span class="about-role">Certified British Master Trainer · Courses pending CPD accreditation</span>
+          <div class="creds-pills">
+            <span class="cred-pill">🎓 Oxford Executive Leadership</span>
+            <span class="cred-pill">🏆 Leader of the Year 2025</span>
+            <span class="cred-pill">🔵 Head of Google UK/Ireland</span>
+            <span class="cred-pill">🏫 Brunel · Northwood College</span>
+            <span class="cred-pill">🌍 35+ Countries</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FOOTER BAND -->
+    <div class="flyer-footer">
+      <div class="contact-block">
+        <div class="contact-label">Get in Touch</div>
+        <a href="mailto:hello@drshika.org">hello@drshika.org</a>
+        <div class="contact-social">TikTok &amp; Instagram: @drshikacademy</div>
+      </div>
+      <div class="copyright">&copy; 2026 DrShika Academy</div>
+      <div class="qr-block">
+        <img src="form-qr.png" alt="QR code — Scan to Register" />
+        <div class="qr-text">Scan to Register</div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
