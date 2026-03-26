@@ -189,13 +189,22 @@
     /* ── Testimonials ── */
     .testimonials-section { background: var(--bg); }
     .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-    .testimonial-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; }
-    .testimonial-card.placeholder {
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      text-align: center; min-height: 180px; border: 2px dashed var(--border); background: transparent;
+    .testimonials-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .testimonial-card {
+      background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 1.75rem 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;
     }
-    .testimonial-card.placeholder .icon { font-size: 2rem; margin-bottom: 0.75rem; opacity: 0.3; }
-    .testimonial-card.placeholder p { color: var(--muted); font-size: 0.9rem; }
+    .testimonial-tag {
+      display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--primary);
+      background: rgba(87,94,207,0.1); padding: 0.2rem 0.7rem;
+      border-radius: 9999px; width: fit-content;
+    }
+    .testimonial-quote { font-size: 2.5rem; font-weight: 900; color: var(--teal); line-height: 1; opacity: 0.5; }
+    .testimonial-text { font-size: 1rem; font-weight: 700; color: #1a1a1a; line-height: 1.5; flex: 1; }
+    .testimonial-meta { margin-top: 0.5rem; border-top: 1px solid var(--border); padding-top: 0.75rem; }
+    .testimonial-author { font-size: 0.88rem; font-weight: 700; }
+    .testimonial-role { font-size: 0.78rem; color: var(--muted); margin-top: 0.15rem; }
 
     /* ── CTA ── */
     .cta-section { background: #fff; text-align: center; }
@@ -413,13 +422,61 @@
     <div class="container">
       <div class="section-header">
         <div class="section-label">Stories</div>
-        <h2>Moments of <span class="gradient-text">Value</span></h2>
-        <p>Real feedback and testimonials from participants. More coming soon as the programme grows.</p>
+        <h2>Real Results. <span class="gradient-text">Real People.</span></h2>
+        <p>From first jobs to the C-suite — here's what happens when people invest in how they show up.</p>
       </div>
       <div class="testimonials-grid">
-        <div class="testimonial-card placeholder"><div class="icon">🎬</div><p><strong>Video testimonial</strong><br/>Coming soon — participant story</p></div>
-        <div class="testimonial-card placeholder"><div class="icon">💬</div><p><strong>Quote &amp; feedback</strong><br/>Coming soon — participant story</p></div>
-        <div class="testimonial-card placeholder"><div class="icon">✨</div><p><strong>Key moment of value</strong><br/>Coming soon — participant story</p></div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-tag">Mid-Career</div>
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">It took me a decade to learn all of this.</p>
+          <div class="testimonial-meta">
+            <div class="testimonial-author">Alex Gillingham</div>
+            <div class="testimonial-role">Senior Executive, Pharmaceutical Industries</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-tag">Recent Graduate</div>
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">Thanks to their training, I landed my first job.</p>
+          <div class="testimonial-meta">
+            <div class="testimonial-author">Martin Davidson</div>
+            <div class="testimonial-role">Junior R&amp;D Specialist, Automotive Sector</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-tag">Career Switch</div>
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">Highly recommended for anyone looking to advance their career!</p>
+          <div class="testimonial-meta">
+            <div class="testimonial-author">David Fellows</div>
+            <div class="testimonial-role">CFO, EcoEnergy Solutions</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-tag">Final-Year Graduate</div>
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">Finding DrShika Academy was a game changer for me.</p>
+          <div class="testimonial-meta">
+            <div class="testimonial-author">Emily Davies</div>
+            <div class="testimonial-role">Intern, Retail Innovations</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-tag">New to C-Suite</div>
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">...expert guidance that helped me develop key corporate skills.</p>
+          <div class="testimonial-meta">
+            <div class="testimonial-author">Fabian Moreau</div>
+            <div class="testimonial-role">Managing Director, Property Sector</div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
