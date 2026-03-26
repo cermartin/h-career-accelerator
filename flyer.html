@@ -278,20 +278,28 @@
       margin-top: 0.8mm;
     }
     .copyright { font-size: 0.58rem; color: rgba(255,255,255,0.3); align-self: flex-end; }
-    .qr-placeholder {
-      width: 52px; height: 52px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 8px;
+    .qr-block {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      gap: 1.5mm;
       flex-shrink: 0;
+    }
+    .qr-block img {
+      width: 60px; height: 60px;
+      border-radius: 6px;
+      background: #fff;
+      padding: 2px;
+      display: block;
+    }
+    .qr-block .qr-text {
+      font-size: 0.5rem;
+      color: rgba(255,255,255,0.5);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
       text-align: center;
     }
-    .qr-placeholder .qr-icon { font-size: 1.5rem; opacity: 0.4; color: #fff; }
-    .qr-placeholder .qr-text { font-size: 0.48rem; color: rgba(255,255,255,0.45); margin-top: 1mm; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
   </style>
 </head>
 <body>
@@ -314,6 +322,12 @@
 
     <!-- BODY -->
     <div class="flyer-body">
+
+      <!-- DEADLINE BANNER -->
+      <div style="background: var(--accent); color: #fff; border-radius: 8px; padding: 3mm 5mm; display: flex; align-items: center; justify-content: space-between; margin-bottom: 5mm;">
+        <span style="font-size: 0.78rem; font-weight: 700;">📅 &nbsp;Sign up deadline: <strong>3rd April 2026</strong></span>
+        <a href="https://forms.gle/t78Hcm8BDseTb7Wv9" style="font-size: 0.7rem; color: #fff; font-weight: 700; background: rgba(0,0,0,0.2); padding: 1.5mm 3.5mm; border-radius: 9999px; text-decoration: none;">Register Now →</a>
+      </div>
 
       <!-- INTRO -->
       <p class="flyer-intro">
@@ -382,6 +396,8 @@
           <strong>Darshika Patel</strong>
           <span class="about-role">Founder, DrShika Academy · Career Coach, Speaker &amp; Networker</span>
           <div class="creds-pills">
+            <span class="cred-pill">✅ Certified British Master Trainer</span>
+            <span class="cred-pill">📋 CPD Accreditation Pending</span>
             <span class="cred-pill">🎓 Oxford Executive Leadership</span>
             <span class="cred-pill">🏆 Leader of the Year 2025</span>
             <span class="cred-pill">🌍 35+ Countries</span>
@@ -399,8 +415,8 @@
         <div class="contact-social">TikTok &amp; Instagram: @drshikacademy</div>
       </div>
       <div class="copyright">&copy; 2026 DrShika Academy</div>
-      <div class="qr-placeholder">
-        <div class="qr-icon">▦</div>
+      <div class="qr-block">
+        <img src="https://chart.googleapis.com/chart?chs=120x120&cht=qr&chl=https://forms.gle/t78Hcm8BDseTb7Wv9&choe=UTF-8" alt="QR code — Register now" />
         <div class="qr-text">Scan to Register</div>
       </div>
     </div>
