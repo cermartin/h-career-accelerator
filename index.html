@@ -120,6 +120,37 @@
     .programme-card p  { font-size: 0.88rem; color: var(--muted); line-height: 1.55; }
     .programme-card.featured { background: linear-gradient(135deg, #f0f1ff 0%, #e8fffe 100%); border-color: rgba(87,94,207,0.2); }
 
+    /* ── Credibility Strip ── */
+    .cred-strip {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+      overflow-x: auto;
+    }
+    .cred-strip-inner {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .cred-strip-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1.2rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      white-space: nowrap;
+      border-right: 1px solid var(--border);
+    }
+    .cred-strip-item:last-child { border-right: none; }
+    .cred-strip-item .csi { font-size: 1rem; }
+    @media (max-width: 640px) {
+      .cred-strip-item { border-right: none; padding: 0.3rem 0.75rem; font-size: 0.72rem; }
+    }
+
     /* ── 6-Week Journey ── */
     .journey-section { background: #fff; }
     .journey-phases { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
@@ -239,6 +270,20 @@
       </div>
     </div>
   </section>
+
+  <!-- CREDIBILITY STRIP -->
+  <div class="cred-strip">
+    <div class="container">
+      <div class="cred-strip-inner">
+        <div class="cred-strip-item"><span class="csi">✅</span> Certified British Master Trainer</div>
+        <div class="cred-strip-item"><span class="csi">🎓</span> Oxford Executive Leadership</div>
+        <div class="cred-strip-item"><span class="csi">🏆</span> Leader of the Year 2025 Nominee</div>
+        <div class="cred-strip-item"><span class="csi">🏫</span> Brunel Business School · Northwood College</div>
+        <div class="cred-strip-item"><span class="csi">🔵</span> Head of Google UK/Ireland</div>
+        <div class="cred-strip-item"><span class="csi">🌍</span> 35+ Countries</div>
+      </div>
+    </div>
+  </div>
 
   <!-- WHAT IS H! -->
   <section class="hi-section" id="hi">
