@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="Copy of drshika-logo_07.png" />
+  <title>Opportunity Masterclass — Level 3 | DrShika Academy</title>
+  <style>
+    @page { size: A4; margin: 12mm; }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #fff;
+      color: #1a1a1a;
+      line-height: 1.5;
+    }
+
+    @media screen {
+      body { background: #d4d2ce; padding: 2rem; }
+      .page {
+        background: #fff;
+        max-width: 210mm;
+        min-height: 297mm;
+        margin: 0 auto;
+        padding: 0;
+        box-shadow: 0 8px 48px rgba(0,0,0,0.22);
+        overflow: hidden;
+        border-radius: 4px;
+      }
+    }
+    @media screen and (max-width: 480px) {
+      body { padding: 0; }
+      .page { border-radius: 0; min-height: 100vh; box-shadow: none; }
+      .flyer-header { padding: 6mm 5mm 5mm; }
+      .flyer-hi { font-size: 3rem; }
+      .flyer-title { font-size: 1.1rem; }
+      .flyer-body { padding: 5mm 5mm 4mm; }
+      .learn-grid { grid-template-columns: 1fr; gap: 3mm; margin-bottom: 4mm; }
+      .fth-row { grid-template-columns: 1fr; gap: 3mm; margin-bottom: 4mm; }
+      .includes-grid { grid-template-columns: 1fr; gap: 2mm; }
+      .flyer-footer { flex-direction: column; align-items: flex-start; padding: 4mm 5mm; gap: 3mm; }
+      .about-strip { flex-direction: column; align-items: flex-start; }
+      .creds-pills { gap: 1.5mm; }
+      .cred-pill { font-size: 0.6rem; }
+    }
+    @media print {
+      body { background: #fff; padding: 0; }
+      .page { border-radius: 0; }
+    }
+
+    :root {
+      --primary: #575ECF;
+      --primary-dark: #3f45a8;
+      --accent: #FE7B02;
+      --teal: #2BBFBF;
+      --magenta: #F858BC;
+      --red: #EF4444;
+      --muted: #6b6b6b;
+      --border: #e5e3de;
+    }
+
+    /* ── Hero header band ── */
+    .flyer-header {
+      background: linear-gradient(135deg, #7c1d1d 0%, #EF4444 45%, #F858BC 100%);
+      padding: 9mm 12mm 8mm;
+      position: relative;
+      overflow: hidden;
+    }
+    .flyer-header::before {
+      content: "";
+      position: absolute;
+      width: 220px; height: 220px;
+      background: radial-gradient(circle, rgba(254,123,2,0.3) 0%, transparent 70%);
+      top: -80px; right: -40px;
+      border-radius: 50%;
+    }
+    .flyer-header::after {
+      content: "";
+      position: absolute;
+      width: 160px; height: 160px;
+      background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
+      bottom: -60px; left: 20px;
+      border-radius: 50%;
+    }
+    .flyer-header-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8mm;
+    }
+    .flyer-header-text { flex: 1; }
+    .flyer-logo-wrap { flex-shrink: 0; }
+    .flyer-logo {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      opacity: 0.92;
+    }
+
+    .flyer-eyebrow {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 3mm;
+    }
+    .flyer-level-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+      font-size: 0.62rem;
+      font-weight: 800;
+      padding: 1mm 3mm;
+      border-radius: 9999px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 2mm;
+    }
+    .flyer-hi {
+      font-size: 4.2rem;
+      font-weight: 900;
+      line-height: 0.9;
+      color: #fff;
+      letter-spacing: -0.04em;
+    }
+    .flyer-hi span {
+      color: var(--accent);
+    }
+    .flyer-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.02em;
+      margin-top: 1.5mm;
+      line-height: 1.2;
+    }
+    .flyer-tagline {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 1.5mm 4mm;
+      border-radius: 9999px;
+      margin-top: 3mm;
+      letter-spacing: 0.03em;
+    }
+
+    /* ── Body content ── */
+    .flyer-body { padding: 7mm 12mm 6mm; }
+
+    /* ── Intro line ── */
+    .flyer-intro {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 6mm;
+      border-left: 4px solid var(--red);
+      padding-left: 4mm;
+    }
+
+    /* ── Section label ── */
+    .flyer-section-label {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2.5mm;
+    }
+
+    /* ── What You'll Learn ── */
+    .learn-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4mm;
+      margin-bottom: 6mm;
+    }
+    .learn-card {
+      border-radius: 8px;
+      padding: 4mm 4mm 4.5mm;
+      border-top: 4px solid transparent;
+    }
+    .learn-card:nth-child(1) { background: #fff1f1; border-top-color: var(--red); }
+    .learn-card:nth-child(2) { background: #fff4eb; border-top-color: var(--accent); }
+    .learn-card:nth-child(3) { background: #fdf0ff; border-top-color: var(--magenta); }
+    .learn-card .learn-icon { font-size: 1.3rem; margin-bottom: 2mm; }
+    .learn-card h4 { font-size: 0.82rem; font-weight: 800; margin-bottom: 1.5mm; color: #1a1a1a; }
+    .learn-card p  { font-size: 0.73rem; color: var(--muted); line-height: 1.45; }
+
+    /* ── CPR Framework ── */
+    .fth-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4mm;
+      margin-bottom: 6mm;
+    }
+    .fth-box {
+      border-radius: 8px;
+      padding: 4.5mm 4mm;
+      text-align: center;
+      color: #fff;
+    }
+    .fth-box:nth-child(1) { background: var(--red); }
+    .fth-box:nth-child(2) { background: var(--accent); }
+    .fth-box:nth-child(3) { background: var(--magenta); }
+    .fth-box .fth-letter { font-size: 2.2rem; font-weight: 900; opacity: 0.25; line-height: 1; }
+    .fth-box .fth-word   { font-size: 1rem; font-weight: 900; margin-top: 1mm; letter-spacing: 0.04em; }
+    .fth-box .fth-desc   { font-size: 0.7rem; opacity: 0.85; margin-top: 1.5mm; line-height: 1.4; }
+
+    /* ── Programme includes ── */
+    .includes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5mm 6mm;
+      margin-bottom: 6mm;
+    }
+    .includes-grid li {
+      list-style: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 2.5mm;
+      color: #1a1a1a;
+    }
+    .includes-grid li .check-dot {
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: var(--red);
+      color: #fff;
+      font-size: 0.6rem;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ── Journey strip ── */
+    .journey-strip {
+      background: linear-gradient(135deg, #fff1f1, #fdf0ff);
+      border-radius: 10px;
+      padding: 4mm 5mm;
+      margin-bottom: 5mm;
+      border: 1px solid rgba(239,68,68,0.2);
+    }
+    .journey-strip .journey-label {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 3mm;
+    }
+    .journey-row {
+      display: flex;
+      align-items: center;
+      gap: 2mm;
+    }
+    .journey-step {
+      flex: 1;
+      text-align: center;
+      background: #fff;
+      border-radius: 6px;
+      padding: 2.5mm 2mm;
+      border: 1.5px solid var(--border);
+    }
+    .journey-step .step-num {
+      font-size: 0.55rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .journey-step .step-name {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-top: 0.5mm;
+    }
+    .journey-step.active {
+      border-color: var(--red);
+      background: #fff1f1;
+    }
+    .journey-step.active .step-name { color: #7c1d1d; }
+    .journey-arrow {
+      font-size: 0.9rem;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+
+    /* ── Readiness note ── */
+    .readiness-note {
+      background: #fff4eb;
+      border-radius: 8px;
+      border-left: 4px solid var(--accent);
+      padding: 3mm 4mm;
+      font-size: 0.78rem;
+      color: #1a1a1a;
+      margin-bottom: 5mm;
+      line-height: 1.55;
+    }
+    .readiness-note strong { color: var(--accent); }
+
+    /* ── Divider ── */
+    .divider { border: none; border-top: 1px solid var(--border); margin: 5mm 0; }
+
+    /* ── About strip ── */
+    .about-strip {
+      background: linear-gradient(135deg, #fff1f1, #fdf0ff);
+      border-radius: 10px;
+      padding: 4mm 5mm;
+      display: flex;
+      align-items: center;
+      gap: 4mm;
+      margin-bottom: 5mm;
+      border: 1px solid rgba(239,68,68,0.15);
+    }
+    .about-strip img {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 3px solid var(--red);
+    }
+    .about-strip-text { flex: 1; }
+    .about-strip-text strong { font-size: 0.88rem; font-weight: 800; display: block; color: #1a1a1a; }
+    .about-strip-text .about-role { font-size: 0.72rem; color: var(--muted); margin-top: 0.5mm; }
+    .creds-pills { display: flex; gap: 2mm; flex-wrap: wrap; margin-top: 2mm; }
+    .cred-pill {
+      font-size: 0.62rem;
+      font-weight: 700;
+      padding: 1mm 3mm;
+      border-radius: 9999px;
+      background: rgba(239,68,68,0.08);
+      color: #7c1d1d;
+      white-space: nowrap;
+    }
+
+    /* ── Footer band ── */
+    .flyer-footer {
+      background: #1a1a1a;
+      padding: 4mm 12mm;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4mm;
+    }
+    .contact-block .contact-label {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 1.5mm;
+    }
+    .contact-block a {
+      font-size: 0.82rem;
+      color: #F858BC;
+      font-weight: 700;
+      display: block;
+      text-decoration: none;
+    }
+    .contact-block .contact-social {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.55);
+      margin-top: 0.8mm;
+    }
+    .copyright { font-size: 0.58rem; color: rgba(255,255,255,0.3); align-self: flex-end; }
+    .qr-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5mm;
+      flex-shrink: 0;
+    }
+    .qr-block img {
+      width: 60px; height: 60px;
+      border-radius: 6px;
+      background: #fff;
+      padding: 2px;
+      display: block;
+    }
+    .qr-block .qr-text {
+      font-size: 0.5rem;
+      color: rgba(255,255,255,0.5);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- HEADER BAND -->
+    <div class="flyer-header">
+      <div class="flyer-header-inner">
+        <div class="flyer-header-text">
+          <div class="flyer-eyebrow">DrShika Academy · Opportunity Masterclass</div>
+          <div class="flyer-level-badge">Level 3</div>
+          <div class="flyer-hi">C<span>.</span>P<span>.</span>R</div>
+          <div class="flyer-title">Opportunity Masterclass</div>
+          <div class="flyer-tagline">Curiosity · Purpose · Readiness</div>
+        </div>
+        <div class="flyer-logo-wrap">
+          <img src="Copy of drshika-logo_07.png" alt="DrShika Academy" class="flyer-logo" />
+        </div>
+      </div>
+    </div>
+
+    <!-- BODY -->
+    <div class="flyer-body">
+
+      <!-- HOOK BANNER -->
+      <div style="background: linear-gradient(135deg, #7c1d1d, #EF4444); color: #fff; border-radius: 8px; padding: 3.5mm 5mm; margin-bottom: 5mm; text-align: center;">
+        <span style="font-size: 0.88rem; font-weight: 800; letter-spacing: -0.01em;">The opportunity is there. Are you ready to act on it?</span>
+      </div>
+
+      <!-- INTRO -->
+      <p class="flyer-intro">
+        Level 3 of the H! Career Accelerator. You've built your presence, you've networked with purpose — now it's time to recognise the opportunity in front of you and decide if you're ready to move.
+      </p>
+
+      <!-- JOURNEY -->
+      <div class="journey-strip">
+        <div class="journey-label">Your Career Accelerator Journey</div>
+        <div class="journey-row">
+          <div class="journey-step">
+            <div class="step-num">Level 1</div>
+            <div class="step-name">V · I · P</div>
+          </div>
+          <div class="journey-arrow">→</div>
+          <div class="journey-step">
+            <div class="step-num">Level 2</div>
+            <div class="step-name">C · A · R</div>
+          </div>
+          <div class="journey-arrow">→</div>
+          <div class="journey-step active">
+            <div class="step-num">Level 3</div>
+            <div class="step-name">C · P · R</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WHAT YOU'LL LEARN -->
+      <div class="flyer-section-label">What You'll Learn</div>
+      <div class="learn-grid">
+        <div class="learn-card">
+          <div class="learn-icon">🔍</div>
+          <h4>Curiosity</h4>
+          <p>Ask the right questions to uncover the real opportunity hiding in every conversation.</p>
+        </div>
+        <div class="learn-card">
+          <div class="learn-icon">🧭</div>
+          <h4>Purpose</h4>
+          <p>Know your why clearly enough to say yes to the right opportunity and no to the rest.</p>
+        </div>
+        <div class="learn-card">
+          <div class="learn-icon">⚡</div>
+          <h4>Readiness</h4>
+          <p>Understand what it takes to be ready — and what's holding you back from acting now.</p>
+        </div>
+      </div>
+
+      <!-- CPR FRAMEWORK -->
+      <div class="flyer-section-label">C · P · R — The Opportunity Framework</div>
+      <div class="fth-row">
+        <div class="fth-box">
+          <div class="fth-letter">C</div>
+          <div class="fth-word">CURIOSITY</div>
+          <div class="fth-desc">Ask deeper questions</div>
+        </div>
+        <div class="fth-box">
+          <div class="fth-letter">P</div>
+          <div class="fth-word">PURPOSE</div>
+          <div class="fth-desc">Know your direction</div>
+        </div>
+        <div class="fth-box">
+          <div class="fth-letter">R</div>
+          <div class="fth-word">READINESS</div>
+          <div class="fth-desc">Choose to act</div>
+        </div>
+      </div>
+
+      <!-- READINESS NOTE -->
+      <div class="readiness-note">
+        <strong>Important:</strong> Not everyone will be ready to action an opportunity — and that's okay. This masterclass helps you understand where you are, so you can move forward on your terms.
+      </div>
+
+      <hr class="divider" />
+
+      <!-- PROGRAMME INCLUDES -->
+      <div class="flyer-section-label">Masterclass Includes</div>
+      <ul class="includes-grid">
+        <li><span class="check-dot">✓</span> Live Interactive Workshop</li>
+        <li><span class="check-dot">✓</span> Opportunity Assessment Tool</li>
+        <li><span class="check-dot">✓</span> 1-to-1 Coaching Session</li>
+        <li><span class="check-dot">✓</span> Readiness Reflection Guide</li>
+        <li><span class="check-dot">✓</span> Personal Action Plan</li>
+        <li><span class="check-dot">✓</span> CPD Accredited Certificate</li>
+      </ul>
+
+      <hr class="divider" />
+
+      <!-- ABOUT -->
+      <div class="about-strip">
+        <img src="darshika-headshot.jpg" alt="Darshika Patel" />
+        <div class="about-strip-text">
+          <strong>Darshika Patel — Founder, DrShika Academy</strong>
+          <span class="about-role">Certified British Master Trainer · Courses pending CPD accreditation</span>
+          <div class="creds-pills">
+            <span class="cred-pill">🎓 Oxford Executive Leadership</span>
+            <span class="cred-pill">🏆 Leader of the Year 2025</span>
+            <span class="cred-pill" style="background: rgba(239,68,68,0.12); font-weight: 800;">✅ Master British Certified Trainer</span>
+            <span class="cred-pill">👔 Senior Executive — ex COO, CRO, DPO, ISO</span>
+            <span class="cred-pill">🏫 Brunel · Northwood College</span>
+            <span class="cred-pill">🌍 35+ Countries</span>
+            <span class="cred-pill">🔒 Enhanced DBS Checked</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FOOTER BAND -->
+    <div class="flyer-footer">
+      <div class="contact-block">
+        <div class="contact-label">Get in Touch</div>
+        <a href="mailto:hello@drshika.org">hello@drshika.org</a>
+        <div class="contact-social">TikTok &amp; Instagram: @drshikacademy</div>
+      </div>
+      <div class="copyright">&copy; 2026 DrShika Academy</div>
+      <div class="qr-block">
+        <img src="linkedin-qr.png" alt="QR code — Connect on LinkedIn" />
+        <div class="qr-text">Connect on LinkedIn</div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
