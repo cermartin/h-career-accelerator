@@ -43,9 +43,8 @@
       .acronym-box .ac-letter { font-size: 1.8rem; }
       .acronym-box .ac-word { font-size: 0.78rem; }
       .acronym-box .ac-desc { font-size: 0.68rem; }
-      .story-strip { padding: 4vw; gap: 3vw; }
-      .story-steps-row { flex-direction: column; gap: 2vw; }
-      .story-arrow { transform: rotate(90deg); align-self: center; }
+      .story-banner { flex-direction: column; align-items: flex-start; padding: 4vw; gap: 2vw; }
+      .story-headline { font-size: 0.88rem; }
       .about-strip { flex-direction: column; padding: 4vw; gap: 3vw; }
       .about-strip img { width: 52px; height: 52px; }
       .creds-pills { gap: 1.5vw; }
@@ -158,73 +157,44 @@
       letter-spacing: -0.01em;
     }
 
-    /* ── STORY STRIP ── */
-    .story-strip {
-      background: linear-gradient(135deg, #f0f1ff, #e8fffe, #fff1f1);
+    /* ── STORY BANNER ── */
+    .story-banner {
+      background: #1a1a1a;
       border-radius: 12px;
       padding: 5mm 6mm;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      gap: 3mm;
       margin-bottom: 7mm;
-      border: 1px solid var(--border);
-    }
-    .story-steps-row {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 3mm;
+      gap: 5mm;
     }
-    .story-step {
-      flex: 1;
-      text-align: center;
-      background: #fff;
-      border-radius: 8px;
-      padding: 3.5mm 3mm;
-      border: 2px solid transparent;
-    }
-    .story-step.vip { border-color: var(--vip); }
-    .story-step.car { border-color: var(--car); }
-    .story-step.cpr { border-color: var(--cpr); }
-    .story-step .s-badge {
-      font-size: 0.55rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 1mm;
-    }
-    .story-step.vip .s-badge { color: var(--vip); }
-    .story-step.car .s-badge { color: var(--car-dark); }
-    .story-step.cpr .s-badge { color: var(--cpr); }
-    .story-step .s-acronym {
-      font-size: 1.1rem;
-      font-weight: 900;
-      color: #1a1a1a;
-      letter-spacing: 0.05em;
-    }
-    .story-step .s-name {
-      font-size: 0.68rem;
-      font-weight: 700;
-      color: var(--muted);
-      margin-top: 0.5mm;
-    }
-    .story-arrow {
-      font-size: 1.1rem;
-      color: var(--muted);
+    .story-icon {
+      font-size: 2rem;
       flex-shrink: 0;
     }
-    .story-narrative {
-      text-align: center;
-      font-size: 0.75rem;
-      color: var(--muted);
-      font-style: italic;
-      line-height: 1.55;
-      padding: 0 4mm;
-      border-top: 1px solid var(--border);
-      padding-top: 3mm;
+    .story-text { flex: 1; }
+    .story-label {
+      font-size: 0.55rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 1.5mm;
     }
-    .story-narrative strong { color: #1a1a1a; font-style: normal; }
+    .story-headline {
+      font-size: 0.95rem;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.4;
+    }
+    .story-headline .h-vip { color: #8b91ff; }
+    .story-headline .h-car { color: #2BBFBF; }
+    .story-headline .h-cpr { color: #ff7070; }
+    .story-sub {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 1.5mm;
+      line-height: 1.5;
+    }
 
     /* ── LEVEL BLOCKS ── */
     .level-row {
@@ -402,7 +372,6 @@
           <div class="combo-eyebrow">DrShika Academy · Full Programme Overview</div>
           <div class="combo-title">H<span>!</span> Career Accelerator</div>
           <div class="combo-sub">Three masterclasses. One transformation.</div>
-          <div class="combo-tagline">VIP → CAR → CPR</div>
         </div>
         <img src="Copy of drshika-logo_07.png" alt="DrShika Academy" class="flyer-logo" />
       </div>
@@ -414,29 +383,15 @@
       <!-- HOOK -->
       <div class="hook-banner">Need help creating opportunities for yourself?</div>
 
-      <!-- STORY STRIP -->
-      <div class="story-strip">
-        <div class="story-steps-row">
-          <div class="story-step vip">
-            <div class="s-badge">Level 1</div>
-            <div class="s-acronym">V · I · P</div>
-            <div class="s-name">Career Accelerator</div>
+      <!-- STORY BANNER -->
+      <div class="story-banner">
+        <div class="story-icon">🚗</div>
+        <div class="story-text">
+          <div class="story-label">How to remember the programme</div>
+          <div class="story-headline">
+            The <span class="h-vip">VIP</span> gets in the <span class="h-car">CAR</span> to go somewhere — and performs <span class="h-cpr">CPR</span> on arrival.
           </div>
-          <div class="story-arrow">→</div>
-          <div class="story-step car">
-            <div class="s-badge">Level 2</div>
-            <div class="s-acronym">C · A · R</div>
-            <div class="s-name">Networking Masterclass</div>
-          </div>
-          <div class="story-arrow">→</div>
-          <div class="story-step cpr">
-            <div class="s-badge">Level 3</div>
-            <div class="s-acronym">C · P · R</div>
-            <div class="s-name">Opportunity Masterclass</div>
-          </div>
-        </div>
-        <div class="story-narrative">
-          The <strong>VIP</strong> gets in the <strong>CAR</strong> to go somewhere and perform <strong>CPR</strong> — solving a problem using the core skills you have.
+          <div class="story-sub">You discover your value, network with purpose, then act on the opportunity — using the core skills only you have.</div>
         </div>
       </div>
 
