@@ -16,7 +16,7 @@
       line-height: 1.5;
     }
 
-    @media screen {
+    @media screen and (min-width: 601px) {
       body { background: #d4d2ce; padding: 2rem; }
       .page {
         background: #fff;
@@ -29,19 +29,23 @@
         border-radius: 4px;
       }
     }
-    @media screen and (max-width: 480px) {
-      body { padding: 0; }
-      .page { border-radius: 0; min-height: 100vh; box-shadow: none; }
-      .flyer-header { padding: 6mm 5mm 5mm; }
+    @media screen and (max-width: 600px) {
+      body { padding: 0; background: #fff; }
+      .page { max-width: 100%; overflow-x: hidden; }
+      .flyer-header { padding: 6vw 5vw 5vw; }
+      .flyer-header-inner { flex-direction: column; align-items: flex-start; gap: 3vw; }
+      .flyer-logo { height: 36px; }
       .flyer-hi { font-size: 3rem; }
       .flyer-title { font-size: 1.1rem; }
-      .flyer-body { padding: 5mm 5mm 4mm; }
-      .learn-grid { grid-template-columns: 1fr; gap: 3mm; margin-bottom: 4mm; }
-      .fth-row { grid-template-columns: 1fr; gap: 3mm; margin-bottom: 4mm; }
-      .includes-grid { grid-template-columns: 1fr; gap: 2mm; }
-      .flyer-footer { flex-direction: column; align-items: flex-start; padding: 4mm 5mm; gap: 3mm; }
-      .about-strip { flex-direction: column; align-items: flex-start; }
-      .creds-pills { gap: 1.5mm; }
+      .flyer-body { padding: 5vw 5vw 4vw; }
+      .learn-grid { grid-template-columns: 1fr; gap: 3vw; margin-bottom: 5vw; }
+      .fth-row { grid-template-columns: 1fr; gap: 3vw; margin-bottom: 5vw; }
+      .includes-grid { grid-template-columns: 1fr; gap: 2.5vw; margin-bottom: 5vw; }
+      .journey-row { flex-direction: column; }
+      .journey-arrow { transform: rotate(90deg); }
+      .flyer-footer { flex-direction: column; align-items: flex-start; padding: 5vw; gap: 3vw; }
+      .about-strip { flex-direction: column; padding: 4vw; gap: 3vw; }
+      .creds-pills { gap: 1.5vw; }
       .cred-pill { font-size: 0.6rem; }
     }
     @media print {
@@ -177,7 +181,7 @@
     /* ── What You'll Learn ── */
     .learn-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       gap: 4mm;
       margin-bottom: 6mm;
     }
@@ -196,7 +200,7 @@
     /* ── CAR Framework ── */
     .fth-row {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
       gap: 4mm;
       margin-bottom: 6mm;
     }
@@ -216,7 +220,7 @@
     /* ── Programme includes ── */
     .includes-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 2.5mm 6mm;
       margin-bottom: 6mm;
     }

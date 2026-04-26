@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="Copy of drshika-logo_07.png" />
+  <title>H! Career Accelerator — Full Programme | DrShika Academy</title>
+  <style>
+    @page { size: A4; margin: 10mm; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #fff;
+      color: #1a1a1a;
+      line-height: 1.5;
+    }
+
+    @media screen and (min-width: 601px) {
+      body { background: #d4d2ce; padding: 2rem; }
+      .page {
+        background: #fff;
+        max-width: 210mm;
+        margin: 0 auto;
+        padding: 0;
+        box-shadow: 0 8px 48px rgba(0,0,0,0.22);
+        overflow: hidden;
+        border-radius: 4px;
+      }
+    }
+    @media screen and (max-width: 600px) {
+      body { padding: 0; background: #fff; }
+      .page { max-width: 100%; overflow-x: hidden; }
+      .combo-header { padding: 6vw 5vw 5vw; }
+      .combo-header-inner { flex-direction: column; align-items: flex-start; gap: 3vw; }
+      .flyer-logo { height: 36px; }
+      .combo-title { font-size: 1.6rem; }
+      .combo-sub { font-size: 0.85rem; }
+      .combo-body { padding: 5vw 5vw; }
+      .level-row { grid-template-columns: 1fr; gap: 4vw; }
+      .level-block { padding: 5vw; }
+      .acronym-row { gap: 2vw; }
+      .acronym-box { padding: 3vw 2vw; }
+      .acronym-box .ac-letter { font-size: 1.8rem; }
+      .acronym-box .ac-word { font-size: 0.78rem; }
+      .acronym-box .ac-desc { font-size: 0.68rem; }
+      .story-strip { padding: 4vw; flex-direction: column; gap: 2vw; }
+      .story-arrow { transform: rotate(90deg); }
+      .about-strip { flex-direction: column; padding: 4vw; gap: 3vw; }
+      .about-strip img { width: 52px; height: 52px; }
+      .creds-pills { gap: 1.5vw; }
+      .cred-pill { font-size: 0.6rem; }
+      .combo-footer { flex-direction: column; align-items: flex-start; padding: 5vw; gap: 3vw; }
+    }
+    @media print {
+      body { background: #fff; padding: 0; }
+      .page { border-radius: 0; }
+    }
+
+    :root {
+      --vip: #575ECF;
+      --vip-dark: #3f45a8;
+      --car: #2BBFBF;
+      --car-dark: #1a6b4a;
+      --cpr: #EF4444;
+      --cpr-dark: #7c1d1d;
+      --accent: #FE7B02;
+      --magenta: #F858BC;
+      --muted: #6b6b6b;
+      --border: #e5e3de;
+    }
+
+    /* ── HEADER ── */
+    .combo-header {
+      background: linear-gradient(135deg, var(--vip-dark) 0%, var(--vip) 30%, var(--car) 65%, #22C55E 100%);
+      padding: 8mm 12mm 7mm;
+      position: relative;
+      overflow: hidden;
+    }
+    .combo-header::before {
+      content: "";
+      position: absolute;
+      width: 260px; height: 260px;
+      background: radial-gradient(circle, rgba(248,88,188,0.25) 0%, transparent 70%);
+      top: -100px; right: -60px;
+      border-radius: 50%;
+    }
+    .combo-header::after {
+      content: "";
+      position: absolute;
+      width: 180px; height: 180px;
+      background: radial-gradient(circle, rgba(254,123,2,0.2) 0%, transparent 70%);
+      bottom: -70px; left: 10px;
+      border-radius: 50%;
+    }
+    .combo-header-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8mm;
+    }
+    .flyer-logo {
+      height: 50px;
+      width: auto;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      opacity: 0.9;
+      flex-shrink: 0;
+    }
+    .combo-eyebrow {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 2mm;
+    }
+    .combo-title {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+    .combo-title span { color: var(--accent); }
+    .combo-sub {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.85);
+      margin-top: 2mm;
+      font-weight: 500;
+    }
+    .combo-tagline {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 1.5mm 4mm;
+      border-radius: 9999px;
+      margin-top: 3mm;
+    }
+
+    /* ── BODY ── */
+    .combo-body { padding: 7mm 12mm 6mm; }
+
+    /* ── HOOK ── */
+    .hook-banner {
+      background: linear-gradient(135deg, var(--vip-dark), var(--vip));
+      color: #fff;
+      border-radius: 8px;
+      padding: 3.5mm 5mm;
+      margin-bottom: 6mm;
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    /* ── STORY STRIP ── */
+    .story-strip {
+      background: linear-gradient(135deg, #f0f1ff, #e8fffe, #fff1f1);
+      border-radius: 12px;
+      padding: 5mm 6mm;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3mm;
+      margin-bottom: 7mm;
+      border: 1px solid var(--border);
+    }
+    .story-step {
+      flex: 1;
+      text-align: center;
+      background: #fff;
+      border-radius: 8px;
+      padding: 3.5mm 3mm;
+      border: 2px solid transparent;
+    }
+    .story-step.vip { border-color: var(--vip); }
+    .story-step.car { border-color: var(--car); }
+    .story-step.cpr { border-color: var(--cpr); }
+    .story-step .s-badge {
+      font-size: 0.55rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1mm;
+    }
+    .story-step.vip .s-badge { color: var(--vip); }
+    .story-step.car .s-badge { color: var(--car-dark); }
+    .story-step.cpr .s-badge { color: var(--cpr); }
+    .story-step .s-acronym {
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: #1a1a1a;
+      letter-spacing: 0.05em;
+    }
+    .story-step .s-name {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-top: 0.5mm;
+    }
+    .story-arrow {
+      font-size: 1.1rem;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+    .story-narrative {
+      text-align: center;
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 3mm;
+      font-style: italic;
+      line-height: 1.5;
+    }
+    .story-narrative strong { color: #1a1a1a; font-style: normal; }
+
+    /* ── LEVEL BLOCKS ── */
+    .level-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 5mm;
+      margin-bottom: 6mm;
+    }
+    .level-block {
+      border-radius: 12px;
+      padding: 5mm;
+      border-top: 5px solid transparent;
+    }
+    .level-block.vip { background: #f0f1ff; border-top-color: var(--vip); }
+    .level-block.car { background: #e8fffe; border-top-color: var(--car); }
+    .level-block.cpr { background: #fff1f1; border-top-color: var(--cpr); }
+
+    .level-tag {
+      font-size: 0.55rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 1.5mm;
+    }
+    .level-block.vip .level-tag { color: var(--vip); }
+    .level-block.car .level-tag { color: var(--car-dark); }
+    .level-block.cpr .level-tag { color: var(--cpr); }
+
+    .level-heading {
+      font-size: 1.05rem;
+      font-weight: 900;
+      color: #1a1a1a;
+      letter-spacing: 0.06em;
+      margin-bottom: 1mm;
+    }
+    .level-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 3mm;
+    }
+
+    /* ── ACRONYM BOXES inside level blocks ── */
+    .acronym-row {
+      display: flex;
+      gap: 2mm;
+      margin-bottom: 3mm;
+    }
+    .acronym-box {
+      flex: 1;
+      border-radius: 6px;
+      padding: 2.5mm 2mm;
+      text-align: center;
+      color: #fff;
+    }
+    .level-block.vip .acronym-box:nth-child(1) { background: var(--vip); }
+    .level-block.vip .acronym-box:nth-child(2) { background: #7b5ea7; }
+    .level-block.vip .acronym-box:nth-child(3) { background: var(--magenta); }
+    .level-block.car .acronym-box:nth-child(1) { background: var(--car); }
+    .level-block.car .acronym-box:nth-child(2) { background: #22C55E; }
+    .level-block.car .acronym-box:nth-child(3) { background: var(--car-dark); }
+    .level-block.cpr .acronym-box:nth-child(1) { background: var(--cpr); }
+    .level-block.cpr .acronym-box:nth-child(2) { background: var(--accent); }
+    .level-block.cpr .acronym-box:nth-child(3) { background: var(--magenta); }
+
+    .acronym-box .ac-letter { font-size: 1.4rem; font-weight: 900; opacity: 0.3; line-height: 1; }
+    .acronym-box .ac-word { font-size: 0.62rem; font-weight: 900; letter-spacing: 0.04em; margin-top: 0.5mm; }
+    .acronym-box .ac-desc { font-size: 0.58rem; opacity: 0.85; margin-top: 1mm; line-height: 1.3; }
+
+    .level-desc {
+      font-size: 0.72rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── DIVIDER ── */
+    .divider { border: none; border-top: 1px solid var(--border); margin: 5mm 0; }
+
+    /* ── ABOUT ── */
+    .about-strip {
+      background: linear-gradient(135deg, #f0f1ff, #e8fffe);
+      border-radius: 10px;
+      padding: 4mm 5mm;
+      display: flex;
+      align-items: center;
+      gap: 4mm;
+      margin-bottom: 5mm;
+      border: 1px solid rgba(87,94,207,0.15);
+    }
+    .about-strip img {
+      width: 54px; height: 54px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 3px solid var(--vip);
+    }
+    .about-strip-text { flex: 1; }
+    .about-strip-text strong { font-size: 0.85rem; font-weight: 800; display: block; color: #1a1a1a; }
+    .about-strip-text .about-role { font-size: 0.7rem; color: var(--muted); margin-top: 0.5mm; }
+    .creds-pills { display: flex; gap: 2mm; flex-wrap: wrap; margin-top: 2mm; }
+    .cred-pill {
+      font-size: 0.6rem;
+      font-weight: 700;
+      padding: 1mm 3mm;
+      border-radius: 9999px;
+      background: rgba(87,94,207,0.1);
+      color: var(--vip);
+      white-space: nowrap;
+    }
+
+    /* ── FOOTER ── */
+    .combo-footer {
+      background: #1a1a1a;
+      padding: 4mm 12mm;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4mm;
+    }
+    .contact-block .contact-label {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 1.5mm;
+    }
+    .contact-block a {
+      font-size: 0.82rem;
+      color: var(--car);
+      font-weight: 700;
+      display: block;
+      text-decoration: none;
+    }
+    .contact-block .contact-social {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.55);
+      margin-top: 0.8mm;
+    }
+    .copyright { font-size: 0.58rem; color: rgba(255,255,255,0.3); align-self: flex-end; }
+    .linkedin-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #0A66C2;
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 2.5mm 5mm;
+      border-radius: 9999px;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+      letter-spacing: 0.02em;
+    }
+    .linkedin-btn:hover { background: #004182; }
+
+    .flyer-section-label {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 3mm;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- HEADER -->
+    <div class="combo-header">
+      <div class="combo-header-inner">
+        <div>
+          <div class="combo-eyebrow">DrShika Academy · Full Programme Overview</div>
+          <div class="combo-title">H<span>!</span> Career Accelerator</div>
+          <div class="combo-sub">Three masterclasses. One transformation.</div>
+          <div class="combo-tagline">VIP → CAR → CPR</div>
+        </div>
+        <img src="Copy of drshika-logo_07.png" alt="DrShika Academy" class="flyer-logo" />
+      </div>
+    </div>
+
+    <!-- BODY -->
+    <div class="combo-body">
+
+      <!-- HOOK -->
+      <div class="hook-banner">Need help creating opportunities for yourself?</div>
+
+      <!-- STORY STRIP -->
+      <div class="story-strip">
+        <div class="story-step vip">
+          <div class="s-badge">Level 1</div>
+          <div class="s-acronym">V · I · P</div>
+          <div class="s-name">Career Accelerator</div>
+        </div>
+        <div class="story-arrow">→</div>
+        <div class="story-step car">
+          <div class="s-badge">Level 2</div>
+          <div class="s-acronym">C · A · R</div>
+          <div class="s-name">Networking Masterclass</div>
+        </div>
+        <div class="story-arrow">→</div>
+        <div class="story-step cpr">
+          <div class="s-badge">Level 3</div>
+          <div class="s-acronym">C · P · R</div>
+          <div class="s-name">Opportunity Masterclass</div>
+        </div>
+        <div class="story-narrative" style="margin-top:3mm;">
+          The <strong>VIP</strong> gets in the <strong>CAR</strong> to go somewhere and perform <strong>CPR</strong> — solving a problem using the core skills you have.
+        </div>
+      </div>
+
+      <!-- THREE LEVEL BLOCKS -->
+      <div class="flyer-section-label">The Three Levels</div>
+      <div class="level-row">
+
+        <!-- VIP -->
+        <div class="level-block vip">
+          <div class="level-tag">Level 1</div>
+          <div class="level-heading">V · I · P</div>
+          <div class="level-title">Career Accelerator</div>
+          <div class="acronym-row">
+            <div class="acronym-box">
+              <div class="ac-letter">V</div>
+              <div class="ac-word">VALUE</div>
+              <div class="ac-desc">Discover your Value</div>
+            </div>
+            <div class="acronym-box">
+              <div class="ac-letter">I</div>
+              <div class="ac-word">INTENTION</div>
+              <div class="ac-desc">Clarify your Intention</div>
+            </div>
+            <div class="acronym-box">
+              <div class="ac-letter">P</div>
+              <div class="ac-word">PRESENCE</div>
+              <div class="ac-desc">Lead with Presence</div>
+            </div>
+          </div>
+          <p class="level-desc">Show up with confidence and turn every conversation into a real opportunity.</p>
+        </div>
+
+        <!-- CAR -->
+        <div class="level-block car">
+          <div class="level-tag">Level 2</div>
+          <div class="level-heading">C · A · R</div>
+          <div class="level-title">Networking Masterclass</div>
+          <div class="acronym-row">
+            <div class="acronym-box">
+              <div class="ac-letter">C</div>
+              <div class="ac-word">CONNECT</div>
+              <div class="ac-desc">Connect with energy</div>
+            </div>
+            <div class="acronym-box">
+              <div class="ac-letter">A</div>
+              <div class="ac-word">ALIGN</div>
+              <div class="ac-desc">Align with values</div>
+            </div>
+            <div class="acronym-box">
+              <div class="ac-letter">R</div>
+              <div class="ac-word">RECONNECT</div>
+              <div class="ac-desc">Reconnect with purpose</div>
+            </div>
+          </div>
+          <p class="level-desc">Walk into any room, align with the right people, and keep connections alive.</p>
+        </div>
+
+        <!-- CPR -->
+        <div class="level-block cpr">
+          <div class="level-tag">Level 3</div>
+          <div class="level-heading">C · P · R</div>
+          <div class="level-title">Opportunity Masterclass</div>
+          <div class="acronym-row">
+            <div class="acronym-box">
+              <div class="ac-letter">C</div>
+              <div class="ac-word">CURIOSITY</div>
+              <div class="ac-desc">Ask deeper questions</div>
+            </div>
+            <div class="acronym-box">
+              <div class="ac-letter">P</div>
+              <div class="ac-word">PURPOSE</div>
+              <div class="ac-desc">Know your direction</div>
+            </div>
+            <div class="acronym-box">
+              <div class="ac-letter">R</div>
+              <div class="ac-word">READINESS</div>
+              <div class="ac-desc">Choose to act</div>
+            </div>
+          </div>
+          <p class="level-desc">Recognise the opportunity in front of you and decide if you're ready to move.</p>
+        </div>
+
+      </div>
+
+      <hr class="divider" />
+
+      <!-- ABOUT -->
+      <div class="about-strip">
+        <img src="darshika-headshot.jpg" alt="Darshika Patel" />
+        <div class="about-strip-text">
+          <strong>Darshika Patel — Founder, DrShika Academy</strong>
+          <span class="about-role">Certified British Master Trainer · Courses pending CPD accreditation</span>
+          <div class="creds-pills">
+            <span class="cred-pill">🎓 Oxford Executive Leadership</span>
+            <span class="cred-pill">🏆 Leader of the Year 2025</span>
+            <span class="cred-pill" style="background: rgba(87,94,207,0.18); font-weight: 800;">✅ Master British Certified Trainer</span>
+            <span class="cred-pill">👔 Senior Executive — ex COO, CRO, DPO, ISO</span>
+            <span class="cred-pill">🏫 Brunel · Northwood College</span>
+            <span class="cred-pill">🌍 35+ Countries</span>
+            <span class="cred-pill">🔒 Enhanced DBS Checked</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="combo-footer">
+      <div class="contact-block">
+        <div class="contact-label">Get in Touch</div>
+        <a href="mailto:hello@drshika.org">hello@drshika.org</a>
+        <div class="contact-social">TikTok &amp; Instagram: @drshikacademy</div>
+      </div>
+      <div class="copyright">&copy; 2026 DrShika Academy</div>
+      <a href="https://www.linkedin.com/in/darshika" class="linkedin-btn" target="_blank">
+        in &nbsp;Connect on LinkedIn
+      </a>
+    </div>
+
+  </div>
+</body>
+</html>
