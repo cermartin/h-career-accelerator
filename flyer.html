@@ -29,6 +29,21 @@
         border-radius: 4px;
       }
     }
+    @media screen and (max-width: 480px) {
+      body { padding: 0; }
+      .page { border-radius: 0; min-height: 100vh; box-shadow: none; }
+      .flyer-header { padding: 6mm 5mm 5mm; }
+      .flyer-hi { font-size: 3rem; }
+      .flyer-title { font-size: 1.1rem; }
+      .flyer-body { padding: 5mm 5mm 4mm; }
+      .learn-grid { grid-template-columns: 1fr; gap: 3mm; margin-bottom: 4mm; }
+      .fth-row { grid-template-columns: 1fr; gap: 3mm; margin-bottom: 4mm; }
+      .includes-grid { grid-template-columns: 1fr; gap: 2mm; }
+      .flyer-footer { flex-direction: column; align-items: flex-start; padding: 4mm 5mm; gap: 3mm; }
+      .about-strip { flex-direction: column; align-items: flex-start; }
+      .creds-pills { gap: 1.5mm; }
+      .cred-pill { font-size: 0.6rem; }
+    }
     @media print {
       body { background: #fff; padding: 0; }
       .page { border-radius: 0; }
@@ -324,10 +339,9 @@
     <!-- BODY -->
     <div class="flyer-body">
 
-      <!-- DEADLINE BANNER -->
-      <div style="background: var(--accent); color: #fff; border-radius: 8px; padding: 3mm 5mm; display: flex; align-items: center; justify-content: space-between; margin-bottom: 5mm;">
-        <span style="font-size: 0.78rem; font-weight: 700;">📅 &nbsp;Sign up deadline: <strong>3rd April 2026</strong></span>
-        <a href="https://forms.gle/t78Hcm8BDseTb7Wv9" style="font-size: 0.7rem; color: #fff; font-weight: 700; background: rgba(0,0,0,0.2); padding: 1.5mm 3.5mm; border-radius: 9999px; text-decoration: none;">Register Now →</a>
+      <!-- HOOK BANNER -->
+      <div style="background: linear-gradient(135deg, var(--primary-dark), var(--primary)); color: #fff; border-radius: 8px; padding: 3.5mm 5mm; margin-bottom: 5mm; text-align: center;">
+        <span style="font-size: 0.88rem; font-weight: 800; letter-spacing: -0.01em;">Need help creating opportunities for yourself?</span>
       </div>
 
       <!-- INTRO -->
@@ -355,23 +369,23 @@
         </div>
       </div>
 
-      <!-- 7-SECOND FRAMEWORK -->
-      <div class="flyer-section-label">The 7-Second Impression Framework</div>
+      <!-- V.I.P FRAMEWORK -->
+      <div class="flyer-section-label">V · I · P — Your Career Advantage</div>
       <div class="fth-row">
         <div class="fth-box">
-          <div class="fth-letter">F</div>
-          <div class="fth-word">FEEL</div>
-          <div class="fth-desc">What emotion do you create the moment you speak?</div>
+          <div class="fth-letter">V</div>
+          <div class="fth-word">VALUE</div>
+          <div class="fth-desc">Discover your Value</div>
         </div>
         <div class="fth-box">
-          <div class="fth-letter">T</div>
-          <div class="fth-word">THINK</div>
-          <div class="fth-desc">What do people conclude about you from your first words?</div>
+          <div class="fth-letter">I</div>
+          <div class="fth-word">INTENTION</div>
+          <div class="fth-desc">Clarify your Intention</div>
         </div>
         <div class="fth-box">
-          <div class="fth-letter">H</div>
-          <div class="fth-word">HOOK</div>
-          <div class="fth-desc">What makes them lean in and want to know more?</div>
+          <div class="fth-letter">P</div>
+          <div class="fth-word">PRESENCE</div>
+          <div class="fth-desc">Lead with Presence</div>
         </div>
       </div>
 
@@ -384,7 +398,7 @@
         <li><span class="check-dot">✓</span> High-Pressure Simulations</li>
         <li><span class="check-dot">✓</span> Live Group Sessions (Zoom)</li>
         <li><span class="check-dot">✓</span> Reconnection &amp; Follow-Up Strategy</li>
-        <li><span class="check-dot">✓</span> 6-Week Structured Career Sprint</li>
+        <li><span class="check-dot">✓</span> 6-Week Structured Programme</li>
         <li><span class="check-dot">✓</span> Personal Growth Plan</li>
       </ul>
 
@@ -399,9 +413,11 @@
           <div class="creds-pills">
             <span class="cred-pill">🎓 Oxford Executive Leadership</span>
             <span class="cred-pill">🏆 Leader of the Year 2025</span>
-            <span class="cred-pill">🔵 Head of Google UK/Ireland</span>
+            <span class="cred-pill" style="background: rgba(87,94,207,0.18); font-weight: 800;">✅ Master British Certified Trainer</span>
+            <span class="cred-pill">👔 Senior Executive — ex COO, CRO, DPO, ISO</span>
             <span class="cred-pill">🏫 Brunel · Northwood College</span>
             <span class="cred-pill">🌍 35+ Countries</span>
+            <span class="cred-pill">🔒 Enhanced DBS Checked</span>
           </div>
         </div>
       </div>
