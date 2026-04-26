@@ -16,7 +16,7 @@
       line-height: 1.5;
     }
 
-    @media screen {
+    @media screen and (min-width: 601px) {
       body { background: #d4d2ce; padding: 2rem; }
       .page {
         background: #fff;
@@ -29,20 +29,69 @@
         border-radius: 4px;
       }
     }
-    @media screen and (max-width: 480px) {
-      body { padding: 0; }
-      .page { border-radius: 0; min-height: 100vh; box-shadow: none; }
-      .flyer-header { padding: 6mm 5mm 5mm; }
-      .flyer-hi { font-size: 3rem; }
-      .flyer-title { font-size: 1.1rem; }
-      .flyer-body { padding: 5mm 5mm 4mm; }
-      .learn-grid { grid-template-columns: 1fr; gap: 3mm; margin-bottom: 4mm; }
-      .fth-row { grid-template-columns: 1fr; gap: 3mm; margin-bottom: 4mm; }
-      .includes-grid { grid-template-columns: 1fr; gap: 2mm; }
-      .flyer-footer { flex-direction: column; align-items: flex-start; padding: 4mm 5mm; gap: 3mm; }
-      .about-strip { flex-direction: column; align-items: flex-start; }
-      .creds-pills { gap: 1.5mm; }
-      .cred-pill { font-size: 0.6rem; }
+    @media screen and (max-width: 600px) {
+      body { padding: 0; background: #fff; }
+      .page {
+        border-radius: 0;
+        min-height: 100vh;
+        box-shadow: none;
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+      .flyer-header { padding: 5vw 5vw 4vw; }
+      .flyer-header-inner { flex-direction: column; align-items: flex-start; gap: 3vw; }
+      .flyer-logo-wrap { align-self: flex-end; position: absolute; top: 4vw; right: 5vw; }
+      .flyer-logo { height: 38px; }
+      .flyer-hi { font-size: 3.2rem; }
+      .flyer-title { font-size: 1.15rem; }
+      .flyer-tagline { font-size: 0.72rem; }
+      .flyer-body { padding: 5vw 5vw 4vw; }
+      .flyer-intro { font-size: 0.85rem; }
+      .learn-grid {
+        grid-template-columns: 1fr;
+        gap: 3vw;
+        margin-bottom: 5vw;
+      }
+      .learn-card { padding: 4vw; }
+      .learn-card h4 { font-size: 0.92rem; }
+      .learn-card p { font-size: 0.8rem; }
+      .fth-row {
+        grid-template-columns: 1fr;
+        gap: 3vw;
+        margin-bottom: 5vw;
+      }
+      .fth-box { padding: 4vw; }
+      .fth-box .fth-letter { font-size: 2.5rem; }
+      .fth-box .fth-word { font-size: 1.1rem; }
+      .fth-box .fth-desc { font-size: 0.8rem; }
+      .includes-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5vw;
+        margin-bottom: 5vw;
+      }
+      .includes-grid li { font-size: 0.88rem; }
+      .about-strip {
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 4vw;
+        gap: 3vw;
+      }
+      .about-strip img { width: 52px; height: 52px; }
+      .about-strip-text strong { font-size: 0.85rem; }
+      .about-strip-text .about-role { font-size: 0.7rem; }
+      .creds-pills { gap: 1.5vw; margin-top: 2vw; }
+      .cred-pill { font-size: 0.62rem; padding: 1mm 2.5mm; }
+      .flyer-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 5vw;
+        gap: 3vw;
+      }
+      .contact-block a { font-size: 0.9rem; }
+      .qr-block { flex-direction: row; align-items: center; gap: 3vw; }
+      .qr-block img { width: 52px; height: 52px; }
+      .qr-block .qr-text { font-size: 0.6rem; text-align: left; }
+      .divider { margin: 4vw 0; }
     }
     @media print {
       body { background: #fff; padding: 0; }
@@ -164,7 +213,7 @@
     /* ── What You'll Learn ── */
     .learn-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       gap: 4mm;
       margin-bottom: 6mm;
     }
@@ -183,7 +232,7 @@
     /* ── FTH Framework ── */
     .fth-row {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
       gap: 4mm;
       margin-bottom: 6mm;
     }
@@ -203,7 +252,7 @@
     /* ── Programme includes ── */
     .includes-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 2.5mm 6mm;
       margin-bottom: 6mm;
     }
@@ -294,28 +343,22 @@
       margin-top: 0.8mm;
     }
     .copyright { font-size: 0.58rem; color: rgba(255,255,255,0.3); align-self: flex-end; }
-    .qr-block {
-      display: flex;
-      flex-direction: column;
+    .linkedin-btn {
+      display: inline-flex;
       align-items: center;
-      gap: 1.5mm;
-      flex-shrink: 0;
-    }
-    .qr-block img {
-      width: 60px; height: 60px;
-      border-radius: 6px;
-      background: #fff;
-      padding: 2px;
-      display: block;
-    }
-    .qr-block .qr-text {
-      font-size: 0.5rem;
-      color: rgba(255,255,255,0.5);
+      gap: 6px;
+      background: #0A66C2;
+      color: #fff;
+      font-size: 0.78rem;
       font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      text-align: center;
+      padding: 2.5mm 5mm;
+      border-radius: 9999px;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+      letter-spacing: 0.02em;
     }
+    .linkedin-btn:hover { background: #004182; }
   </style>
 </head>
 <body>
@@ -432,10 +475,9 @@
         <div class="contact-social">TikTok &amp; Instagram: @drshikacademy</div>
       </div>
       <div class="copyright">&copy; 2026 DrShika Academy</div>
-      <div class="qr-block">
-        <img src="linkedin-qr.png" alt="QR code — Connect on LinkedIn" />
-        <div class="qr-text">Connect on LinkedIn</div>
-      </div>
+      <a href="https://linkedin.com/in/drshika" class="linkedin-btn" target="_blank">
+        in &nbsp;Connect on LinkedIn
+      </a>
     </div>
 
   </div>
