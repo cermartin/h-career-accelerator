@@ -45,6 +45,9 @@
       .acronym-box .ac-desc { font-size: 0.68rem; }
       .story-banner { flex-direction: column; align-items: flex-start; padding: 4vw; gap: 2vw; }
       .story-headline { font-size: 0.88rem; }
+      .acronym-row { gap: 2vw; }
+      .acronym-box .ac-word { font-size: 0.6rem; }
+      .acronym-box .ac-desc { font-size: 0.58rem; }
       .about-strip { flex-direction: column; padding: 4vw; gap: 3vw; }
       .about-strip img { width: 52px; height: 52px; }
       .creds-pills { gap: 1.5vw; }
@@ -199,14 +202,19 @@
     /* ── LEVEL BLOCKS ── */
     .level-row {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 5mm;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4mm;
       margin-bottom: 6mm;
+    }
+    @media screen and (max-width: 600px) {
+      .level-row { grid-template-columns: 1fr; gap: 4vw; }
     }
     .level-block {
       border-radius: 12px;
-      padding: 5mm;
+      padding: 4mm;
       border-top: 5px solid transparent;
+      min-width: 0;
+      overflow: hidden;
     }
     .level-block.vip { background: #f0f1ff; border-top-color: var(--vip); }
     .level-block.car { background: #e8fffe; border-top-color: var(--car); }
@@ -240,15 +248,18 @@
     /* ── ACRONYM BOXES inside level blocks ── */
     .acronym-row {
       display: flex;
-      gap: 2mm;
+      gap: 1.5mm;
       margin-bottom: 3mm;
+      overflow: hidden;
     }
     .acronym-box {
       flex: 1;
+      min-width: 0;
       border-radius: 6px;
-      padding: 2.5mm 2mm;
+      padding: 2.5mm 1mm;
       text-align: center;
       color: #fff;
+      overflow: hidden;
     }
     .level-block.vip .acronym-box:nth-child(1) { background: var(--vip); }
     .level-block.vip .acronym-box:nth-child(2) { background: #7b5ea7; }
@@ -260,9 +271,9 @@
     .level-block.cpr .acronym-box:nth-child(2) { background: var(--accent); }
     .level-block.cpr .acronym-box:nth-child(3) { background: var(--magenta); }
 
-    .acronym-box .ac-letter { font-size: 1.4rem; font-weight: 900; opacity: 0.3; line-height: 1; }
-    .acronym-box .ac-word { font-size: 0.62rem; font-weight: 900; letter-spacing: 0.04em; margin-top: 0.5mm; }
-    .acronym-box .ac-desc { font-size: 0.58rem; opacity: 0.85; margin-top: 1mm; line-height: 1.3; }
+    .acronym-box .ac-letter { font-size: 1.2rem; font-weight: 900; opacity: 0.3; line-height: 1; }
+    .acronym-box .ac-word { font-size: 0.52rem; font-weight: 900; letter-spacing: 0.01em; margin-top: 0.5mm; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .acronym-box .ac-desc { font-size: 0.5rem; opacity: 0.85; margin-top: 1mm; line-height: 1.3; }
 
     .level-desc {
       font-size: 0.72rem;
@@ -387,11 +398,11 @@
       <div class="story-banner">
         <div class="story-icon">🚗</div>
         <div class="story-text">
-          <div class="story-label">How to remember the programme</div>
+          <div class="story-label">The story behind the programme</div>
           <div class="story-headline">
-            The <span class="h-vip">VIP</span> gets in the <span class="h-car">CAR</span> to go somewhere — and performs <span class="h-cpr">CPR</span> on arrival.
+            Every <span class="h-vip">VIP</span> has a destination. They take the <span class="h-car">CAR</span> to get there. And when they arrive — they perform <span class="h-cpr">CPR</span>.
           </div>
-          <div class="story-sub">You discover your value, network with purpose, then act on the opportunity — using the core skills only you have.</div>
+          <div class="story-sub">First you own your identity. Then you drive toward the right people. Then you breathe life into the opportunities waiting for you.</div>
         </div>
       </div>
 
