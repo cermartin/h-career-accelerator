@@ -43,8 +43,9 @@
       .acronym-box .ac-letter { font-size: 1.8rem; }
       .acronym-box .ac-word { font-size: 0.78rem; }
       .acronym-box .ac-desc { font-size: 0.68rem; }
-      .story-strip { padding: 4vw; flex-direction: column; gap: 2vw; }
-      .story-arrow { transform: rotate(90deg); }
+      .story-strip { padding: 4vw; gap: 3vw; }
+      .story-steps-row { flex-direction: column; gap: 2vw; }
+      .story-arrow { transform: rotate(90deg); align-self: center; }
       .about-strip { flex-direction: column; padding: 4vw; gap: 3vw; }
       .about-strip img { width: 52px; height: 52px; }
       .creds-pills { gap: 1.5vw; }
@@ -163,11 +164,17 @@
       border-radius: 12px;
       padding: 5mm 6mm;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: column;
+      align-items: stretch;
       gap: 3mm;
       margin-bottom: 7mm;
       border: 1px solid var(--border);
+    }
+    .story-steps-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3mm;
     }
     .story-step {
       flex: 1;
@@ -209,11 +216,13 @@
     }
     .story-narrative {
       text-align: center;
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       color: var(--muted);
-      margin-top: 3mm;
       font-style: italic;
-      line-height: 1.5;
+      line-height: 1.55;
+      padding: 0 4mm;
+      border-top: 1px solid var(--border);
+      padding-top: 3mm;
     }
     .story-narrative strong { color: #1a1a1a; font-style: normal; }
 
@@ -407,24 +416,26 @@
 
       <!-- STORY STRIP -->
       <div class="story-strip">
-        <div class="story-step vip">
-          <div class="s-badge">Level 1</div>
-          <div class="s-acronym">V · I · P</div>
-          <div class="s-name">Career Accelerator</div>
+        <div class="story-steps-row">
+          <div class="story-step vip">
+            <div class="s-badge">Level 1</div>
+            <div class="s-acronym">V · I · P</div>
+            <div class="s-name">Career Accelerator</div>
+          </div>
+          <div class="story-arrow">→</div>
+          <div class="story-step car">
+            <div class="s-badge">Level 2</div>
+            <div class="s-acronym">C · A · R</div>
+            <div class="s-name">Networking Masterclass</div>
+          </div>
+          <div class="story-arrow">→</div>
+          <div class="story-step cpr">
+            <div class="s-badge">Level 3</div>
+            <div class="s-acronym">C · P · R</div>
+            <div class="s-name">Opportunity Masterclass</div>
+          </div>
         </div>
-        <div class="story-arrow">→</div>
-        <div class="story-step car">
-          <div class="s-badge">Level 2</div>
-          <div class="s-acronym">C · A · R</div>
-          <div class="s-name">Networking Masterclass</div>
-        </div>
-        <div class="story-arrow">→</div>
-        <div class="story-step cpr">
-          <div class="s-badge">Level 3</div>
-          <div class="s-acronym">C · P · R</div>
-          <div class="s-name">Opportunity Masterclass</div>
-        </div>
-        <div class="story-narrative" style="margin-top:3mm;">
+        <div class="story-narrative">
           The <strong>VIP</strong> gets in the <strong>CAR</strong> to go somewhere and perform <strong>CPR</strong> — solving a problem using the core skills you have.
         </div>
       </div>
