@@ -378,10 +378,16 @@
       color: var(--muted);
       margin-bottom: 1.5mm;
     }
+    .print-tab { background: #1a1a1a; text-align: center; padding: 7px 0; font-size: 0.75rem; }
+    .print-tab a { color: #fff; text-decoration: none; font-weight: 700; letter-spacing: 0.03em; }
+    @media print { .print-tab { display: none; } }
   </style>
 </head>
 <body>
-  <div class="page">
+  <div class="print-tab">
+  <a href="flyer-combo-print.html">Print Version (A4)</a>
+</div>
+<div class="page">
 
     <!-- HEADER -->
     <div class="combo-header">

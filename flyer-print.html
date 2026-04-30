@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="Copy of drshika-logo_07.png" />
-  <title>Networking Masterclass — Level 2 | DrShika Academy</title>
+  <title>The H! Career Accelerator — Flyer | DrShika Academy</title>
   <style>
-    @page { size: A4; margin: 12mm; }
+    @page { size: A4; margin: 0; }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -31,26 +31,84 @@
     }
     @media screen and (max-width: 600px) {
       body { padding: 0; background: #fff; }
-      .page { max-width: 100%; overflow-x: hidden; }
-      .flyer-header { padding: 6vw 5vw 5vw; }
+      .page {
+        border-radius: 0;
+        min-height: 100vh;
+        box-shadow: none;
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+      .flyer-header { padding: 5vw 5vw 4vw; }
       .flyer-header-inner { flex-direction: column; align-items: flex-start; gap: 3vw; }
-      .flyer-logo { height: 36px; }
-      .flyer-hi { font-size: 3rem; }
-      .flyer-title { font-size: 1.1rem; }
+      .flyer-logo-wrap { align-self: flex-end; position: absolute; top: 4vw; right: 5vw; }
+      .flyer-logo { height: 38px; }
+      .flyer-hi { font-size: 3.2rem; }
+      .flyer-title { font-size: 1.15rem; }
+      .flyer-tagline { font-size: 0.72rem; }
       .flyer-body { padding: 5vw 5vw 4vw; }
-      .learn-grid { grid-template-columns: 1fr; gap: 3vw; margin-bottom: 5vw; }
-      .fth-row { grid-template-columns: 1fr; gap: 3vw; margin-bottom: 5vw; }
-      .includes-grid { grid-template-columns: 1fr; gap: 2.5vw; margin-bottom: 5vw; }
-      .journey-row { flex-direction: column; }
-      .journey-arrow { transform: rotate(90deg); }
-      .flyer-footer { flex-direction: column; align-items: flex-start; padding: 5vw; gap: 3vw; }
-      .about-strip { flex-direction: column; padding: 4vw; gap: 3vw; }
-      .creds-pills { gap: 1.5vw; }
-      .cred-pill { font-size: 0.6rem; }
+      .flyer-intro { font-size: 0.85rem; }
+      .learn-grid {
+        grid-template-columns: 1fr;
+        gap: 3vw;
+        margin-bottom: 5vw;
+      }
+      .learn-card { padding: 4vw; }
+      .learn-card h4 { font-size: 0.92rem; }
+      .learn-card p { font-size: 0.8rem; }
+      .fth-row {
+        grid-template-columns: 1fr;
+        gap: 3vw;
+        margin-bottom: 5vw;
+      }
+      .fth-box { padding: 4vw; }
+      .fth-box .fth-letter { font-size: 2.5rem; }
+      .fth-box .fth-word { font-size: 1.1rem; }
+      .fth-box .fth-desc { font-size: 0.8rem; }
+      .includes-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5vw;
+        margin-bottom: 5vw;
+      }
+      .includes-grid li { font-size: 0.88rem; }
+      .about-strip {
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 4vw;
+        gap: 3vw;
+      }
+      .about-strip img { width: 52px; height: 52px; }
+      .about-strip-text strong { font-size: 0.85rem; }
+      .about-strip-text .about-role { font-size: 0.7rem; }
+      .creds-pills { gap: 1.5vw; margin-top: 2vw; }
+      .cred-pill { font-size: 0.62rem; padding: 1mm 2.5mm; }
+      .flyer-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 5vw;
+        gap: 3vw;
+      }
+      .contact-block a { font-size: 0.9rem; }
+      .qr-block { flex-direction: row; align-items: center; gap: 3vw; }
+      .qr-block img { width: 52px; height: 52px; }
+      .qr-block .qr-text { font-size: 0.6rem; text-align: left; }
+      .divider { margin: 4vw 0; }
     }
     @media print {
-      body { background: #fff; padding: 0; }
-      .page { border-radius: 0; }
+      body { background: #fff !important; padding: 0 !important; margin: 0 !important; }
+      .page {
+        width: 210mm !important;
+        min-height: 297mm !important;
+        max-width: none !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+      }
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+      .print-tab { display: none !important; }
+      .linkedin-btn { display: none !important; }
+      .print-qr { display: flex !important; flex-direction: column; align-items: center; gap: 1.5mm; flex-shrink: 0; }
+      .print-qr img { width: 60px; height: 60px; border-radius: 6px; background: #fff; padding: 2px; display: block; }
+      .print-qr .qr-text { font-size: 0.5rem; color: rgba(255,255,255,0.5); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; text-align: center; }
     }
 
     :root {
@@ -59,14 +117,13 @@
       --accent: #FE7B02;
       --teal: #2BBFBF;
       --magenta: #F858BC;
-      --green: #22C55E;
       --muted: #6b6b6b;
       --border: #e5e3de;
     }
 
     /* ── Hero header band ── */
     .flyer-header {
-      background: linear-gradient(135deg, #1a6b4a 0%, #2BBFBF 45%, #22C55E 100%);
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 45%, var(--teal) 100%);
       padding: 6mm 10mm 5mm;
       position: relative;
       overflow: hidden;
@@ -75,7 +132,7 @@
       content: "";
       position: absolute;
       width: 220px; height: 220px;
-      background: radial-gradient(circle, rgba(254,123,2,0.3) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(248,88,188,0.3) 0%, transparent 70%);
       top: -80px; right: -40px;
       border-radius: 50%;
     }
@@ -83,7 +140,7 @@
       content: "";
       position: absolute;
       width: 160px; height: 160px;
-      background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(254,123,2,0.25) 0%, transparent 70%);
       bottom: -60px; left: 20px;
       border-radius: 50%;
     }
@@ -112,18 +169,6 @@
       text-transform: uppercase;
       color: rgba(255,255,255,0.7);
       margin-bottom: 1.5mm;
-    }
-    .flyer-level-badge {
-      display: inline-block;
-      background: rgba(255,255,255,0.2);
-      color: #fff;
-      font-size: 0.62rem;
-      font-weight: 800;
-      padding: 1mm 3mm;
-      border-radius: 9999px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 2mm;
     }
     .flyer-hi {
       font-size: 3.4rem;
@@ -164,7 +209,7 @@
       color: var(--muted);
       line-height: 1.6;
       margin-bottom: 4mm;
-      border-left: 4px solid #2BBFBF;
+      border-left: 4px solid var(--teal);
       padding-left: 4mm;
     }
 
@@ -175,7 +220,7 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 1.5mm;
+      margin-bottom: 2.5mm;
     }
 
     /* ── What You'll Learn ── */
@@ -190,14 +235,14 @@
       padding: 3mm 3mm 3.5mm;
       border-top: 4px solid transparent;
     }
-    .learn-card:nth-child(1) { background: #e8fffe; border-top-color: #2BBFBF; }
-    .learn-card:nth-child(2) { background: #f0fff4; border-top-color: #22C55E; }
-    .learn-card:nth-child(3) { background: #fff4eb; border-top-color: var(--accent); }
-    .learn-card .learn-icon { font-size: 1.3rem; margin-bottom: 1mm; }
+    .learn-card:nth-child(1) { background: #f0f1ff; border-top-color: var(--primary); }
+    .learn-card:nth-child(2) { background: #fff4eb; border-top-color: var(--accent); }
+    .learn-card:nth-child(3) { background: #e8fffe; border-top-color: var(--teal); }
+    .learn-card .learn-icon { font-size: 1.3rem; margin-bottom: 2mm; }
     .learn-card h4 { font-size: 0.82rem; font-weight: 800; margin-bottom: 1.5mm; color: #1a1a1a; }
     .learn-card p  { font-size: 0.73rem; color: var(--muted); line-height: 1.45; }
 
-    /* ── CAR Framework ── */
+    /* ── FTH Framework ── */
     .fth-row {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -210,9 +255,9 @@
       text-align: center;
       color: #fff;
     }
-    .fth-box:nth-child(1) { background: #2BBFBF; }
-    .fth-box:nth-child(2) { background: #22C55E; }
-    .fth-box:nth-child(3) { background: #1a6b4a; }
+    .fth-box:nth-child(1) { background: var(--primary); }
+    .fth-box:nth-child(2) { background: var(--teal); }
+    .fth-box:nth-child(3) { background: var(--magenta); }
     .fth-box .fth-letter { font-size: 2.2rem; font-weight: 900; opacity: 0.25; line-height: 1; }
     .fth-box .fth-word   { font-size: 1rem; font-weight: 900; margin-top: 1mm; letter-spacing: 0.04em; }
     .fth-box .fth-desc   { font-size: 0.7rem; opacity: 0.85; margin-top: 1mm; line-height: 1.4; }
@@ -226,17 +271,17 @@
     }
     .includes-grid li {
       list-style: none;
-      font-size: 0.78rem;
+      font-size: 0.82rem;
       font-weight: 600;
       display: flex;
       align-items: center;
-      gap: 2mm;
+      gap: 2.5mm;
       color: #1a1a1a;
     }
     .includes-grid li .check-dot {
       width: 18px; height: 18px;
       border-radius: 50%;
-      background: #2BBFBF;
+      background: var(--teal);
       color: #fff;
       font-size: 0.6rem;
       font-weight: 900;
@@ -246,79 +291,26 @@
       flex-shrink: 0;
     }
 
-    /* ── Journey strip ── */
-    .journey-strip {
-      background: linear-gradient(135deg, #f0f1ff, #e8fffe);
-      border-radius: 10px;
-      padding: 2mm 3mm;
-      margin-bottom: 2mm;
-      border: 1px solid rgba(43,191,191,0.2);
-    }
-    .journey-strip .journey-label {
-      font-size: 0.6rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 1.5mm;
-    }
-    .journey-row {
-      display: flex;
-      align-items: center;
-      gap: 2mm;
-    }
-    .journey-step {
-      flex: 1;
-      text-align: center;
-      background: #fff;
-      border-radius: 6px;
-      padding: 1.5mm 2mm;
-      border: 1.5px solid var(--border);
-    }
-    .journey-step .step-num {
-      font-size: 0.55rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .journey-step .step-name {
-      font-size: 0.78rem;
-      font-weight: 800;
-      color: #1a1a1a;
-      margin-top: 0.5mm;
-    }
-    .journey-step.active {
-      border-color: #2BBFBF;
-      background: #e8fffe;
-    }
-    .journey-step.active .step-name { color: #1a6b4a; }
-    .journey-arrow {
-      font-size: 0.9rem;
-      color: var(--muted);
-      flex-shrink: 0;
-    }
-
     /* ── Divider ── */
     .divider { border: none; border-top: 1px solid var(--border); margin: 3mm 0; }
 
     /* ── About strip ── */
     .about-strip {
-      background: linear-gradient(135deg, #f0fff4, #e8fffe);
+      background: linear-gradient(135deg, #f0f1ff, #e8fffe);
       border-radius: 10px;
       padding: 3mm 4mm;
       display: flex;
       align-items: center;
       gap: 4mm;
       margin-bottom: 3mm;
-      border: 1px solid rgba(43,191,191,0.2);
+      border: 1px solid rgba(87,94,207,0.15);
     }
     .about-strip img {
       width: 56px; height: 56px;
       border-radius: 50%;
       object-fit: cover;
       flex-shrink: 0;
-      border: 3px solid #2BBFBF;
+      border: 3px solid var(--primary);
     }
     .about-strip-text { flex: 1; }
     .about-strip-text strong { font-size: 0.88rem; font-weight: 800; display: block; color: #1a1a1a; }
@@ -329,8 +321,8 @@
       font-weight: 700;
       padding: 1mm 3mm;
       border-radius: 9999px;
-      background: rgba(43,191,191,0.1);
-      color: #1a6b4a;
+      background: rgba(87,94,207,0.1);
+      color: var(--primary);
       white-space: nowrap;
     }
 
@@ -353,7 +345,7 @@
     }
     .contact-block a {
       font-size: 0.82rem;
-      color: #2BBFBF;
+      color: var(--teal);
       font-weight: 700;
       display: block;
       text-decoration: none;
@@ -382,8 +374,19 @@
     .linkedin-btn:hover { background: #004182; }
     .print-qr { display: none; }
     @media print {
+      body { background: #fff !important; padding: 0 !important; margin: 0 !important; }
+      .page {
+        width: 210mm !important;
+        min-height: 297mm !important;
+        max-width: none !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+      }
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+      .print-tab { display: none !important; }
       .linkedin-btn { display: none !important; }
-      .print-qr { display: flex; flex-direction: column; align-items: center; gap: 1.5mm; flex-shrink: 0; }
+      .print-qr { display: flex !important; flex-direction: column; align-items: center; gap: 1.5mm; flex-shrink: 0; }
       .print-qr img { width: 60px; height: 60px; border-radius: 6px; background: #fff; padding: 2px; display: block; }
       .print-qr .qr-text { font-size: 0.5rem; color: rgba(255,255,255,0.5); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; text-align: center; }
     }
@@ -394,7 +397,7 @@
 </head>
 <body>
   <div class="print-tab">
-  <a href="flyer-car-print.html">Print Version (A4)</a>
+  <a href="flyer-print.html">Print Version (A4)</a>
 </div>
 <div class="page">
 
@@ -402,11 +405,10 @@
     <div class="flyer-header">
       <div class="flyer-header-inner">
         <div class="flyer-header-text">
-          <div class="flyer-eyebrow">DrShika Academy · Networking Masterclass</div>
-          <div class="flyer-level-badge">Level 2</div>
-          <div class="flyer-hi">C<span>.</span>A<span>.</span>R</div>
-          <div class="flyer-title">Networking Masterclass</div>
-          <div class="flyer-tagline">Connect · Align · Reconnect</div>
+          <div class="flyer-eyebrow">DrShika Academy · Career Programme</div>
+          <div class="flyer-hi">H<span>!</span></div>
+          <div class="flyer-title">Career Accelerator</div>
+          <div class="flyer-tagline">From Conversation to Opportunity</div>
         </div>
         <div class="flyer-logo-wrap">
           <img src="Copy of drshika-logo_07.png" alt="DrShika Academy" class="flyer-logo" />
@@ -418,87 +420,66 @@
     <div class="flyer-body">
 
       <!-- HOOK BANNER -->
-      <div style="background: linear-gradient(135deg, #1a6b4a, #2BBFBF); color: #fff; border-radius: 8px; padding: 2.5mm 4mm; margin-bottom: 3mm; text-align: center;">
-        <span style="font-size: 0.88rem; font-weight: 800; letter-spacing: -0.01em;">Ready to turn networking into real relationships?</span>
+      <div style="background: linear-gradient(135deg, var(--primary-dark), var(--primary)); color: #fff; border-radius: 8px; padding: 3.5mm 5mm; margin-bottom: 3mm; text-align: center;">
+        <span style="font-size: 0.88rem; font-weight: 800; letter-spacing: -0.01em;">Need help creating opportunities for yourself?</span>
       </div>
 
       <!-- INTRO -->
       <p class="flyer-intro">
-        Level 2 of the H! Career Accelerator. Build on your VIP foundation and learn how to walk into any room, align with the right people, and keep the connection alive long after the event ends.
+        A structured programme that teaches you how to show up with confidence, make a lasting impression, and turn every conversation into a real opportunity.
       </p>
-
-      <!-- JOURNEY -->
-      <div class="journey-strip">
-        <div class="journey-label">Your Career Accelerator Journey</div>
-        <div class="journey-row">
-          <div class="journey-step">
-            <div class="step-num">Level 1</div>
-            <div class="step-name">V · I · P</div>
-          </div>
-          <div class="journey-arrow">→</div>
-          <div class="journey-step active">
-            <div class="step-num">Level 2</div>
-            <div class="step-name">C · A · R</div>
-          </div>
-          <div class="journey-arrow">→</div>
-          <div class="journey-step">
-            <div class="step-num">Level 3</div>
-            <div class="step-name">C · P · R</div>
-          </div>
-        </div>
-      </div>
 
       <!-- WHAT YOU'LL LEARN -->
       <div class="flyer-section-label">What You'll Learn</div>
       <div class="learn-grid">
         <div class="learn-card">
-          <div class="learn-icon">🤝</div>
-          <h4>Connect with Energy</h4>
-          <p>Make the kind of first impression that pulls people in before you say a word.</p>
-        </div>
-        <div class="learn-card">
           <div class="learn-icon">🎯</div>
-          <h4>Align with Values</h4>
-          <p>Find the people whose goals and values match yours — and know how to show it.</p>
+          <h4>Identity &amp; Clarity</h4>
+          <p>Know what you stand for and learn to say it with confidence.</p>
         </div>
         <div class="learn-card">
-          <div class="learn-icon">🔄</div>
-          <h4>Reconnect with Purpose</h4>
-          <p>Follow up in a way that feels natural, not transactional, and keeps doors open.</p>
+          <div class="learn-icon">⚡</div>
+          <h4>Confidence &amp; Presence</h4>
+          <p>Show up fully in every room and stay steady under pressure.</p>
+        </div>
+        <div class="learn-card">
+          <div class="learn-icon">🌐</div>
+          <h4>Connection &amp; Follow-Up</h4>
+          <p>Turn first conversations into lasting opportunities.</p>
         </div>
       </div>
 
-      <!-- CAR FRAMEWORK -->
-      <div class="flyer-section-label">C · A · R — The Networking Framework</div>
+      <!-- V.I.P FRAMEWORK -->
+      <div class="flyer-section-label">V · I · P — Your Career Advantage</div>
       <div class="fth-row">
         <div class="fth-box">
-          <div class="fth-letter">C</div>
-          <div class="fth-word">CONNECT</div>
-          <div class="fth-desc">Connect with energy</div>
+          <div class="fth-letter">V</div>
+          <div class="fth-word">VALUE</div>
+          <div class="fth-desc">Discover your Value</div>
         </div>
         <div class="fth-box">
-          <div class="fth-letter">A</div>
-          <div class="fth-word">ALIGN</div>
-          <div class="fth-desc">Align with values</div>
+          <div class="fth-letter">I</div>
+          <div class="fth-word">INTENTION</div>
+          <div class="fth-desc">Clarify your Intention</div>
         </div>
         <div class="fth-box">
-          <div class="fth-letter">R</div>
-          <div class="fth-word">RECONNECT</div>
-          <div class="fth-desc">Reconnect with purpose</div>
+          <div class="fth-letter">P</div>
+          <div class="fth-word">PRESENCE</div>
+          <div class="fth-desc">Lead with Presence</div>
         </div>
       </div>
 
       <hr class="divider" />
 
       <!-- PROGRAMME INCLUDES -->
-      <div class="flyer-section-label">Masterclass Includes</div>
+      <div class="flyer-section-label">Programme Includes</div>
       <ul class="includes-grid">
-        <li><span class="check-dot">✓</span> Live Interactive Workshop</li>
-        <li><span class="check-dot">✓</span> Real Networking Simulations</li>
         <li><span class="check-dot">✓</span> 1-to-1 Coaching Session</li>
-        <li><span class="check-dot">✓</span> Follow-Up Strategy Toolkit</li>
-        <li><span class="check-dot">✓</span> Personal Action Plan</li>
-        <li><span class="check-dot">✓</span> CPD Accredited Certificate</li>
+        <li><span class="check-dot">✓</span> High-Pressure Simulations</li>
+        <li><span class="check-dot">✓</span> Live Group Sessions (Zoom)</li>
+        <li><span class="check-dot">✓</span> Reconnection &amp; Follow-Up Strategy</li>
+        <li><span class="check-dot">✓</span> 6-Week Structured Programme</li>
+        <li><span class="check-dot">✓</span> Personal Growth Plan</li>
       </ul>
 
       <hr class="divider" />
@@ -512,7 +493,7 @@
           <div class="creds-pills">
             <span class="cred-pill">🎓 Oxford Executive Leadership</span>
             <span class="cred-pill">🏆 Leader of the Year 2025</span>
-            <span class="cred-pill" style="background: rgba(43,191,191,0.18); font-weight: 800;">✅ Master British Certified Trainer</span>
+            <span class="cred-pill" style="background: rgba(87,94,207,0.18); font-weight: 800;">✅ Master British Certified Trainer</span>
             <span class="cred-pill">👔 Senior Executive — ex COO, CRO, DPO, ISO</span>
             <span class="cred-pill">🌍 35+ Countries</span>
             <span class="cred-pill">🔒 Enhanced DBS Checked</span>

@@ -6,7 +6,7 @@
   <link rel="icon" type="image/png" href="Copy of drshika-logo_07.png" />
   <title>Networking Masterclass — Level 2 | DrShika Academy</title>
   <style>
-    @page { size: A4; margin: 12mm; }
+    @page { size: A4; margin: 0; }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -49,8 +49,21 @@
       .cred-pill { font-size: 0.6rem; }
     }
     @media print {
-      body { background: #fff; padding: 0; }
-      .page { border-radius: 0; }
+      body { background: #fff !important; padding: 0 !important; margin: 0 !important; }
+      .page {
+        width: 210mm !important;
+        min-height: 297mm !important;
+        max-width: none !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+      }
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+      .print-tab { display: none !important; }
+      .linkedin-btn { display: none !important; }
+      .print-qr { display: flex !important; flex-direction: column; align-items: center; gap: 1.5mm; flex-shrink: 0; }
+      .print-qr img { width: 60px; height: 60px; border-radius: 6px; background: #fff; padding: 2px; display: block; }
+      .print-qr .qr-text { font-size: 0.5rem; color: rgba(255,255,255,0.5); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; text-align: center; }
     }
 
     :root {
@@ -382,8 +395,19 @@
     .linkedin-btn:hover { background: #004182; }
     .print-qr { display: none; }
     @media print {
+      body { background: #fff !important; padding: 0 !important; margin: 0 !important; }
+      .page {
+        width: 210mm !important;
+        min-height: 297mm !important;
+        max-width: none !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+      }
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+      .print-tab { display: none !important; }
       .linkedin-btn { display: none !important; }
-      .print-qr { display: flex; flex-direction: column; align-items: center; gap: 1.5mm; flex-shrink: 0; }
+      .print-qr { display: flex !important; flex-direction: column; align-items: center; gap: 1.5mm; flex-shrink: 0; }
       .print-qr img { width: 60px; height: 60px; border-radius: 6px; background: #fff; padding: 2px; display: block; }
       .print-qr .qr-text { font-size: 0.5rem; color: rgba(255,255,255,0.5); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; text-align: center; }
     }
