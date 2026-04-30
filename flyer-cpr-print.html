@@ -52,12 +52,16 @@
       body { background: #fff !important; padding: 0 !important; margin: 0 !important; }
       .page {
         width: 210mm !important;
-        min-height: 297mm !important;
-        max-width: none !important;
+        height: 297mm !important;
+        zoom: 0.8307 !important;
         margin: 0 !important;
         box-shadow: none !important;
         border-radius: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        overflow: hidden !important;
       }
+      .flyer-body, .combo-body { flex: 1 !important; }
       * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
       .print-tab { display: none !important; }
       .linkedin-btn { display: none !important; }
@@ -80,7 +84,7 @@
     /* ── Hero header band ── */
     .flyer-header {
       background: linear-gradient(135deg, #7c1d1d 0%, #EF4444 45%, #F858BC 100%);
-      padding: 6mm 10mm 5mm;
+      padding: 9mm 12mm 8mm;
       position: relative;
       overflow: hidden;
     }
@@ -124,7 +128,7 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: rgba(255,255,255,0.7);
-      margin-bottom: 1.5mm;
+      margin-bottom: 2.5mm;
     }
     .flyer-level-badge {
       display: inline-block;
@@ -139,7 +143,7 @@
       margin-bottom: 2mm;
     }
     .flyer-hi {
-      font-size: 3.4rem;
+      font-size: 4.2rem;
       font-weight: 900;
       line-height: 0.9;
       color: #fff;
@@ -169,7 +173,7 @@
     }
 
     /* ── Body content ── */
-    .flyer-body { padding: 5mm 10mm 4mm; }
+    .flyer-body { padding: 7mm 12mm 6mm; }
 
     /* ── Intro line ── */
     .flyer-intro {
@@ -188,7 +192,7 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 1.5mm;
+      margin-bottom: 2.5mm;
     }
 
     /* ── What You'll Learn ── */
@@ -200,14 +204,14 @@
     }
     .learn-card {
       border-radius: 8px;
-      padding: 3mm 3mm 3.5mm;
+      padding: 4mm 4mm 4.5mm;
       border-top: 4px solid transparent;
     }
     .learn-card:nth-child(1) { background: #fff1f1; border-top-color: var(--red); }
     .learn-card:nth-child(2) { background: #fff4eb; border-top-color: var(--accent); }
     .learn-card:nth-child(3) { background: #fdf0ff; border-top-color: var(--magenta); }
     .learn-card .learn-icon { font-size: 1.3rem; margin-bottom: 1mm; }
-    .learn-card h4 { font-size: 0.82rem; font-weight: 800; margin-bottom: 1.5mm; color: #1a1a1a; }
+    .learn-card h4 { font-size: 0.82rem; font-weight: 800; margin-bottom: 2.5mm; color: #1a1a1a; }
     .learn-card p  { font-size: 0.73rem; color: var(--muted); line-height: 1.45; }
 
     /* ── CPR Framework ── */
@@ -219,7 +223,7 @@
     }
     .fth-box {
       border-radius: 8px;
-      padding: 3mm 4mm;
+      padding: 4.5mm 4mm;
       text-align: center;
       color: #fff;
     }
@@ -263,8 +267,8 @@
     .journey-strip {
       background: linear-gradient(135deg, #fff1f1, #fdf0ff);
       border-radius: 10px;
-      padding: 2mm 3mm;
-      margin-bottom: 2mm;
+      padding: 3mm 4mm;
+      margin-bottom: 3mm;
       border: 1px solid rgba(239,68,68,0.2);
     }
     .journey-strip .journey-label {
@@ -273,7 +277,7 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 1.5mm;
+      margin-bottom: 2.5mm;
     }
     .journey-row {
       display: flex;
@@ -285,7 +289,7 @@
       text-align: center;
       background: #fff;
       border-radius: 6px;
-      padding: 1.5mm 2mm;
+      padding: 2.5mm 2mm;
       border: 1.5px solid var(--border);
     }
     .journey-step .step-num {
@@ -326,13 +330,13 @@
     .readiness-note strong { color: var(--accent); }
 
     /* ── Divider ── */
-    .divider { border: none; border-top: 1px solid var(--border); margin: 3mm 0; }
+    .divider { border: none; border-top: 1px solid var(--border); margin: 5mm 0; }
 
     /* ── About strip ── */
     .about-strip {
       background: linear-gradient(135deg, #fff1f1, #fdf0ff);
       border-radius: 10px;
-      padding: 3mm 4mm;
+      padding: 4.5mm 4mm;
       display: flex;
       align-items: center;
       gap: 4mm;
@@ -363,7 +367,7 @@
     /* ── Footer band ── */
     .flyer-footer {
       background: #1a1a1a;
-      padding: 3mm 10mm;
+      padding: 4mm 12mm;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -375,7 +379,7 @@
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: rgba(255,255,255,0.45);
-      margin-bottom: 1.5mm;
+      margin-bottom: 2.5mm;
     }
     .contact-block a {
       font-size: 0.82rem;
@@ -411,12 +415,16 @@
       body { background: #fff !important; padding: 0 !important; margin: 0 !important; }
       .page {
         width: 210mm !important;
-        min-height: 297mm !important;
-        max-width: none !important;
+        height: 297mm !important;
+        zoom: 0.8307 !important;
         margin: 0 !important;
         box-shadow: none !important;
         border-radius: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        overflow: hidden !important;
       }
+      .flyer-body, .combo-body { flex: 1 !important; }
       * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
       .print-tab { display: none !important; }
       .linkedin-btn { display: none !important; }
@@ -430,10 +438,7 @@
   </style>
 </head>
 <body>
-  <div class="print-tab">
-  <a href="flyer-cpr-print.html">Print Version (A4)</a>
-</div>
-<div class="page">
+  <div class="page">
 
     <!-- HEADER BAND -->
     <div class="flyer-header">
@@ -455,7 +460,7 @@
     <div class="flyer-body">
 
       <!-- HOOK BANNER -->
-      <div style="background: linear-gradient(135deg, #7c1d1d, #EF4444); color: #fff; border-radius: 8px; padding: 2.5mm 4mm; margin-bottom: 3mm; text-align: center;">
+      <div style="background: linear-gradient(135deg, #7c1d1d, #EF4444); color: #fff; border-radius: 8px; padding: 3.5mm 5mm; margin-bottom: 3mm; text-align: center;">
         <span style="font-size: 0.88rem; font-weight: 800; letter-spacing: -0.01em;">The opportunity is there. Are you ready to act on it?</span>
       </div>
 

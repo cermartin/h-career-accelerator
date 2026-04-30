@@ -97,12 +97,16 @@
       body { background: #fff !important; padding: 0 !important; margin: 0 !important; }
       .page {
         width: 210mm !important;
-        min-height: 297mm !important;
-        max-width: none !important;
+        height: 297mm !important;
+        zoom: 0.9767 !important;
         margin: 0 !important;
         box-shadow: none !important;
         border-radius: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        overflow: hidden !important;
       }
+      .flyer-body, .combo-body { flex: 1 !important; }
       * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
       .print-tab { display: none !important; }
       .linkedin-btn { display: none !important; }
@@ -124,7 +128,7 @@
     /* ── Hero header band ── */
     .flyer-header {
       background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 45%, var(--teal) 100%);
-      padding: 6mm 10mm 5mm;
+      padding: 9mm 12mm 8mm;
       position: relative;
       overflow: hidden;
     }
@@ -168,10 +172,10 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: rgba(255,255,255,0.7);
-      margin-bottom: 1.5mm;
+      margin-bottom: 2.5mm;
     }
     .flyer-hi {
-      font-size: 3.4rem;
+      font-size: 4.2rem;
       font-weight: 900;
       line-height: 0.9;
       color: #fff;
@@ -201,7 +205,7 @@
     }
 
     /* ── Body content ── */
-    .flyer-body { padding: 5mm 10mm 4mm; }
+    .flyer-body { padding: 7mm 12mm 6mm; }
 
     /* ── Intro line ── */
     .flyer-intro {
@@ -232,14 +236,14 @@
     }
     .learn-card {
       border-radius: 8px;
-      padding: 3mm 3mm 3.5mm;
+      padding: 4mm 4mm 4.5mm;
       border-top: 4px solid transparent;
     }
     .learn-card:nth-child(1) { background: #f0f1ff; border-top-color: var(--primary); }
     .learn-card:nth-child(2) { background: #fff4eb; border-top-color: var(--accent); }
     .learn-card:nth-child(3) { background: #e8fffe; border-top-color: var(--teal); }
     .learn-card .learn-icon { font-size: 1.3rem; margin-bottom: 2mm; }
-    .learn-card h4 { font-size: 0.82rem; font-weight: 800; margin-bottom: 1.5mm; color: #1a1a1a; }
+    .learn-card h4 { font-size: 0.82rem; font-weight: 800; margin-bottom: 2.5mm; color: #1a1a1a; }
     .learn-card p  { font-size: 0.73rem; color: var(--muted); line-height: 1.45; }
 
     /* ── FTH Framework ── */
@@ -251,7 +255,7 @@
     }
     .fth-box {
       border-radius: 8px;
-      padding: 3mm 4mm;
+      padding: 4.5mm 4mm;
       text-align: center;
       color: #fff;
     }
@@ -292,13 +296,13 @@
     }
 
     /* ── Divider ── */
-    .divider { border: none; border-top: 1px solid var(--border); margin: 3mm 0; }
+    .divider { border: none; border-top: 1px solid var(--border); margin: 5mm 0; }
 
     /* ── About strip ── */
     .about-strip {
       background: linear-gradient(135deg, #f0f1ff, #e8fffe);
       border-radius: 10px;
-      padding: 3mm 4mm;
+      padding: 4.5mm 4mm;
       display: flex;
       align-items: center;
       gap: 4mm;
@@ -329,7 +333,7 @@
     /* ── Footer band ── */
     .flyer-footer {
       background: #1a1a1a;
-      padding: 3mm 10mm;
+      padding: 4mm 12mm;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -341,7 +345,7 @@
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: rgba(255,255,255,0.45);
-      margin-bottom: 1.5mm;
+      margin-bottom: 2.5mm;
     }
     .contact-block a {
       font-size: 0.82rem;
@@ -377,12 +381,16 @@
       body { background: #fff !important; padding: 0 !important; margin: 0 !important; }
       .page {
         width: 210mm !important;
-        min-height: 297mm !important;
-        max-width: none !important;
+        height: 297mm !important;
+        zoom: 0.9767 !important;
         margin: 0 !important;
         box-shadow: none !important;
         border-radius: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        overflow: hidden !important;
       }
+      .flyer-body, .combo-body { flex: 1 !important; }
       * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
       .print-tab { display: none !important; }
       .linkedin-btn { display: none !important; }
@@ -396,10 +404,7 @@
   </style>
 </head>
 <body>
-  <div class="print-tab">
-  <a href="flyer-print.html">Print Version (A4)</a>
-</div>
-<div class="page">
+  <div class="page">
 
     <!-- HEADER BAND -->
     <div class="flyer-header">
